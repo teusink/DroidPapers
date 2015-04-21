@@ -1,0 +1,31 @@
+@charset 'UTF-8';
+@media all and (orientation: landscape) {
+	body {
+		/* font-size: 85% !important; */
+		font-size: 100% !important;
+	}
+}
+@media all and (orientation: portrait) {
+	body {
+		font-size: 100% !important;
+	}
+}
+img.wallThumb {
+	border: 0;
+	margin: 1px 1px -4px 0;
+	max-width: 300px;
+	width: 32.8%;
+	height: auto;
+}
+img.wallThumbL {
+	border: 0;
+	margin: 1px 1px -4px 0;
+	max-width: 300px;
+	width: 33%;
+	height: auto;
+}
+li.headerSpace {
+	height: 1.40em;
+	padding: 0;
+	margin: 0;
+}

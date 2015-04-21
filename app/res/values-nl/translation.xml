@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="alreadydownloaded">Bestand is al gedownload.</string>
+    <string name="appupdate">App update</string>
+    <string name="appupdatemessage">S.v.p. updaten naar de laatste versie van DroidPapers.</string>
+    <string name="cachedeleted">App cache is verwijderd.</string>
+    <string name="contentupdate">Content update</string>
+    <string name="downloadcomplete">Download klaar</string>
+    <string name="downloadstarted">Download gestart....</string>
+    <string name="downloadwrong">Download is verkeerd gegaan, probeer het nog een keer of neem contact op met de ontwikkelaar.</string>
+    <string name="errorsettingringcontact">Beltoon instellen mislukt, probeer het nog een keer of neem contact op met de ontwikkelaar.</string>
+    <string name="errorsettingwall">Achtergrond instellen mislukt. Probeer het nog een keer.</string>
+    <string name="errorsettingwallcontact">Achtergrond instellen mislukt, probeer het nog een keer of neem contact op met de ontwikkelaar.</string>
+    <string name="errorsettingwalldel">Achtergrond instellen mislukt. Tik op \'Download verwijderen\' en probeer het nog een keer.</string>
+    <string name="file">Bestand</string>
+    <string name="fileerror">Bestand downloaden mislukt, probeer het nog een keer of neem contact op met de ontwikkelaar.</string>
+    <string name="filenotondevice">Bestand niet gevonden op apparaat.</string>
+    <string name="fileweberror">Bestand bestaat niet of kan geen verbinding maken met de webserver, probeer het nog een keer of neem contact op met de ontwikkelaar.</string>
+    <string name="initcontent">Content moet worden geïnitialiseerd</string>
+    <string name="initcontentmessage">Deze notificatie wordt maximaal eens per dag en eens per update weergegeven. Dit kan uitgezet worden in de instellingen menu in DroidPapers.</string>
+    <string name="localfiledeleted">Lokale bestand is verwijderd.</string>
+    <string name="nodefaultset">Geen standaard geluid ingesteld.</string>
+    <string name="nodownloadsfound">DroidPapers heeft geen gedownloade achtergronden gevonden.</string>
+    <string name="ringsetas">is ingesteld als</string>
+    <string name="settingwallpaper">Achtergrond instellen</string>
+    <string name="startplaycurrent">Gestart met afspelen huidige</string>
+    <string name="stopplaycurrent">Gestopt met afspelen huidige</string>
+    <string name="stopplaycurrentsound">Gestart met afspelen huidige geluid.</string>
+    <string name="wallpaperset">Achtergrond ingesteld.</string>
+</resources>

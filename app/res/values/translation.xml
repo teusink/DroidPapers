@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="alreadydownloaded">File is already downloaded.</string>
+    <string name="appupdate">App update</string>
+    <string name="appupdatemessage">Please update to the latest version of DroidPapers.</string>
+    <string name="cachedeleted">App cache is deleted.</string>
+    <string name="contentupdate">Content update</string>
+    <string name="downloadcomplete">Download complete</string>
+    <string name="downloadstarted">Download started....</string>
+    <string name="downloadwrong">Download went wrong, please try again or contact the developer.</string>
+    <string name="errorsettingringcontact">Error setting ringtone, please try again or contact the developer.</string>
+    <string name="errorsettingwall">Error setting wallpaper. Please try again.</string>
+    <string name="errorsettingwallcontact">Error setting wallpaper, please try again or contact the developer.</string>
+    <string name="errorsettingwalldel">Error setting wallpaper. Please press \'Delete from device\' and try again.</string>
+    <string name="file">File</string>
+    <string name="fileerror">Error downloading file, please try again or contact the developer.</string>
+    <string name="filenotondevice">File is not on device.</string>
+    <string name="fileweberror">File does not exists or cannot connect to webserver, please try again or contact the developer.</string>
+    <string name="initcontent">Please initialize content</string>
+    <string name="initcontentmessage">This notification will be displayed once a day maximum and only once per new update. You can set it off in the settings menu in DroidPapers.</string>
+    <string name="localfiledeleted">Local file is deleted.</string>
+    <string name="nodefaultset">No default sound set</string>
+    <string name="nodownloadsfound">DroidPapers did not find downloaded wallpapers.</string>
+    <string name="ringsetas">is set as</string>
+    <string name="settingwallpaper">Setting wallpaper</string>
+    <string name="startplaycurrent">Started playing current</string>
+    <string name="stopplaycurrent">Stopped playing current</string>
+    <string name="stopplaycurrentsound">Stopped playing current sound.</string>
+    <string name="wallpaperset">Wallpaper set.</string>
+</resources>

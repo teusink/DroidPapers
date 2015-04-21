@@ -1,0 +1,1095 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="viewport" content="user-scalable=no, initial-scale=1, width=device-width" /><!-- Do not change this! -->
+		
+		<!-- Stylesheets -->
+		<!-- jQuery and jQuery Mobile -->
+		<link rel="stylesheet" type="text/css" href="./themes/AndroidHolo.min.css" /><!-- ThemeRoller theme -->
+		<link rel="stylesheet" type="text/css" href="./themes/jquery.mobile.icons-1.4.5.min.css" />
+		<link rel="stylesheet" type="text/css" href="./themes/jquery.mobile.structure-1.4.5.min.css" />
+		
+		<!-- Application -->
+		<link rel="stylesheet" type="text/css" href="./themes/application.css" />
+		<link rel="stylesheet" type="text/css" href="./themes/application.spinner.css" />
+		<link rel="stylesheet" type="text/css" href="./themes/application.cards.css" />
+		<link rel="stylesheet" type="text/css" href="./themes/application.smartphone.css" id="sizeStylesheet" />
+		
+		<!-- JavaScript -->
+		<!-- Cordova PhoneGap -->
+		<script type="text/javascript" src="./cordova.js"></script>
+		<script type="text/javascript" src="./js/backgroundService-3.1.0.js"></script>
+		<script type="text/javascript" src="./js/GAPlugin.js"></script>
+		<script type="text/javascript" src="./js/cordova_custom_plugins.js"></script>
+		
+		<!-- jQuery -->
+		<script type="text/javascript" src="./js/jquery-2.1.1.min.js"></script>
+		
+		<!-- jQuery Mobile -->
+		<script type="text/javascript" src="./js/jquery.mobile.settings.js"></script><!-- this must be loaded before jQuery Mobile -->
+		<script type="text/javascript" src="./js/jquery.mobile-1.4.5.min.js"></script>
+		
+		<!-- Other frameworks -->
+		<script type="text/javascript" src="./js/fastclick.js"></script>
+		<script type="text/javascript" src="./js/i18next-1.7.4.min.js"></script>
+		
+		<!-- Application -->
+		<script type="text/javascript">
+			window.indexFile = "main.html";
+			window.appPart = "App";
+		</script>
+		<script type="text/javascript" src="./js/application.core.plugins.js"></script>
+		<script type="text/javascript" src="./js/application.core.services.js"></script>
+		<script type="text/javascript" src="./js/application.core.js"></script>
+		<script type="text/javascript" src="./js/application.specific.main.js"></script>
+		<script type="text/javascript" src="./js/application.content.topics.js"></script>
+		<script type="text/javascript" src="./js/application.content.walls.js"></script>
+		<script type="text/javascript" src="./js/application.content.rings.js"></script>
+		
+		<title>DroidPapers</title>
+	</head>
+	<body>
+		<div id="landingPage" data-role="page" data-theme="b">
+			<div role="main" class="ui-content" data-theme="b">
+			</div>
+		</div>
+		
+		<div id="indexPage" data-role="page" data-theme="a">
+		
+			<!-- left panel -->
+			<div id="panelMenuIndex" data-role="panel" data-theme="b" data-position="left" data-display="overlay" data-dismissible="true" data-position-fixed="true" data-swipe-close="true" data-animate="true" class="transparant">
+				<ul id="panelMenuIndexUL" data-role="listview"></ul>
+			</div>
+			<!-- /panel -->
+			
+			<!-- right panel -->
+			<div id="panelMenuRightIndex" data-role="panel" data-theme="b" data-position="right" data-display="overlay" data-dismissible="true" data-position-fixed="true" data-swipe-close="true" data-animate="true" class="transparant">
+				<ul id="panelMenuRightIndexUL" data-role="listview"></ul>
+			</div>
+			<!-- /panel -->
+			
+			<div class="headerSticky ui-title" data-role="header" data-hide-during-focus="" data-tap-toggle="false" data-position="fixed" data-theme="a">
+				<div>
+					<p class="headerBarText"><img alt="header" id="headerTitleIndex" class="headerIconTitle" src="./images/icons/ic_launcher_full_menu.png" /><img alt="header" id="headerOverflowIndex" class="headerIconFirstRight" src="./images/icons/ic_action_overflow_header.png" />
+					&nbsp;</p>
+				</div>
+			</div><!-- /header -->
+			
+			<div role="main" class="ui-content" data-theme="a">
+				
+				<div id="appUpdateStatus"></div>
+				
+				<div id="infoSyncStatus"></div>
+				
+				<div id="requestRating"></div>
+				
+				<div id="muzeiExtension"></div>
+				
+				<div class="ui-grid-b ui-responsive">
+					<div class="ui-block-a" id="aGridIndex"></div>
+					<div class="ui-block-b" id="bGridIndex"></div>
+					<div class="ui-block-c" id="cGridIndex"></div>
+				</div>
+				
+			</div><!-- /content -->
+		
+		</div><!-- /page -->
+		
+		<div id="topicPage" data-role="page" data-theme="a">
+			
+			<!-- left panel -->
+			<div id="panelMenuTopic" data-role="panel" data-theme="b" data-position="left" data-display="overlay" data-dismissible="true" data-position-fixed="true" data-swipe-close="true" data-animate="true" class="transparant">
+				<ul id="panelMenuTopicUL" data-role="listview"></ul>
+			</div>
+			<!-- /panel -->
+			
+			<!-- right panel -->
+			<div id="panelMenuRightTopic" data-role="panel" data-theme="b" data-position="right" data-display="overlay" data-dismissible="true" data-position-fixed="true" data-swipe-close="true" data-animate="true" class="transparant">
+				<ul id="panelMenuRightTopicUL" data-role="listview"></ul>
+			</div>
+			<!-- /panel -->
+			
+			<!-- ringtone panel -->
+			<div id="panelMenuRingTopic" data-role="panel" data-theme="b" data-position="right" data-display="overlay" data-dismissible="true" data-position-fixed="true" data-swipe-close="true" data-animate="true" class="transparant">
+				<br /> <br />
+				<h4 class="ringType" id="ringTypeTopic" data-i18n="ringtone"><br />&nbsp;</h4>
+				<img id="favoriteStarRingsTopic" alt="favoritestar" src="./images/icons/ic_action_star_0_footer.png" class="favoriteRing" />
+				<div data-role="controlgroup" data-type="horizontal">
+					<input id="playButtonTopic" data-mini="true" data-theme="d" type="button" data-inline="true" data-iconpos="notext" data-icon="holoplay" value="Play" />
+					<input id="pauseButtonTopic" data-mini="true" data-theme="d" disabled="true" type="button" data-inline="true" data-iconpos="notext" data-icon="holopause" value="Pause" />
+					<input id="stopButtonTopic" data-mini="true" data-theme="d" disabled="true" type="button" data-inline="true" data-iconpos="notext" data-icon="holostop" value="Stop" />
+				</div>
+				<ul class="actionList" data-theme="b" data-role="listview" data-inset="true">
+					<li data-icon="false"><a id="ringSetDefTopic" class="panelText"><img alt="setdefault" src="./images/icons/ic_action_music_1.png" class="ui-li-icon largerIcon" /><span data-i18n="setasdefault"></span></a></li>
+					<li data-icon="false"><a id="ringDownOnlyTopic" class="panelText"><img alt="download" src="./images/icons/ic_action_download.png" class="ui-li-icon largerIcon" /><span data-i18n="downloadonly"></span></a></li>
+					<li data-icon="false"><a id="ringShareTopic" class="panelText"><img alt="share" src="./images/icons/ic_action_share.png" class="ui-li-icon largerIcon" /><span data-i18n="share"></span></a></li>
+					<li data-icon="false"><a id="ringDelCacheTopic" class="panelText"><img alt="delete" src="./images/icons/ic_action_trash.png" class="ui-li-icon largerIcon" /><span data-i18n="deletedownload"></span></a></li>
+					<li data-icon="false"><a id="ringOpenBrowserTopic" class="panelText"><img alt="browser" src="./images/icons/ic_action_globe.png" class="ui-li-icon largerIcon" /><span data-i18n="openinbrowser"></span></a></li>
+					<li data-icon="false"><a id="ringCurrentTopic" class="panelText"><img alt="current" src="./images/icons/ic_action_music_1.png" class="ui-li-icon largerIcon" /><span data-i18n="playstopcurrent"></span></a></li>
+				</ul>
+				<p id="ringCounterTopic"></p>
+			</div>
+			<!-- /panel -->
+			
+			<div class="headerSticky ui-title" data-role="header" data-hide-during-focus="" data-tap-toggle="false" data-position="fixed" data-theme="a">
+				<div>
+					<p class="headerBarText"><img alt="header" id="headerTitleTopic" class="headerIconTitle" src="./images/icons/ic_launcher_full_arrow.png" /><img alt="header" id="headerRefreshTopic" class="headerIconSecondRight" src="./images/icons/ic_action_reload_header.png" /><img alt="header" id="headerOverflowTopic" class="headerIconFirstRight" src="./images/icons/ic_action_overflow_header.png" />
+					&nbsp;</p>
+				</div>
+			</div><!-- /header -->
+			
+			<div role="main" class="ui-content" data-theme="a">
+				
+				<h1 id="topicTitle"></h1>
+				
+				<div id="topicContent"></div>
+				
+			</div><!-- /content -->
+		
+		</div><!-- /page -->
+		
+		<div id="uriRingtonePage" data-role="page" data-theme="a">
+			
+			<!-- left panel -->
+			<div id="panelMenuRingUri" data-role="panel" data-theme="b" data-position="left" data-display="overlay" data-dismissible="true" data-position-fixed="true" data-swipe-close="true" data-animate="true" class="transparant">
+				<ul id="panelMenuRingUriUL" data-role="listview"></ul>
+			</div>
+			<!-- /panel -->
+			
+			<!-- right panel -->
+			<div id="panelMenuRightRingUri" data-role="panel" data-theme="b" data-position="right" data-display="overlay" data-dismissible="true" data-position-fixed="true" data-swipe-close="true" data-animate="true" class="transparant">
+				<ul id="panelMenuRightRingUriUL" data-role="listview"></ul>
+			</div>
+			<!-- /panel -->
+			
+			<!-- ringtone panel -->
+			<div id="panelMenuRingRingUri" data-role="panel" data-theme="b" data-position="right" data-display="overlay" data-dismissible="true" data-position-fixed="true" data-swipe-close="true" data-animate="true" class="transparant">
+				<br /> <br />
+				<h4 class="ringType" id="ringTypeRingUri" data-i18n="ringtone"><br />&nbsp;</h4>
+				<img id="favoriteStarRingsRingUri" alt="favoritestar" src="./images/icons/ic_action_star_0_footer.png" class="favoriteRing" />
+				<div data-role="controlgroup" data-type="horizontal">
+					<input id="playButtonRingUri" data-mini="true" data-theme="d" type="button" data-inline="true" data-iconpos="notext" data-icon="holoplay" value="Play" />
+					<input id="pauseButtonRingUri" data-mini="true" data-theme="d" disabled="true" type="button" data-inline="true" data-iconpos="notext" data-icon="holopause" value="Pause" />
+					<input id="stopButtonRingUri" data-mini="true" data-theme="d" disabled="true" type="button" data-inline="true" data-iconpos="notext" data-icon="holostop" value="Stop" />
+				</div>
+				<ul class="actionList" data-theme="b" data-role="listview" data-inset="true">
+					<li data-icon="false"><a id="ringSetDefRingUri" class="panelText"><img alt="setdefault" src="./images/icons/ic_action_music_1.png" class="ui-li-icon largerIcon" /><span data-i18n="setasdefault"></span></a></li>
+					<li data-icon="false"><a id="ringDownOnlyRingUri" class="panelText"><img alt="download" src="./images/icons/ic_action_download.png" class="ui-li-icon largerIcon" /><span data-i18n="downloadonly"></span></a></li>
+					<li data-icon="false"><a id="ringShareRingUri" class="panelText"><img alt="share" src="./images/icons/ic_action_share.png" class="ui-li-icon largerIcon" /><span data-i18n="share"></span></a></li>
+					<li data-icon="false"><a id="ringDelCacheRingUri" class="panelText"><img alt="delete" src="./images/icons/ic_action_trash.png" class="ui-li-icon largerIcon" /><span data-i18n="deletedownload"></span></a></li>
+					<li data-icon="false"><a id="ringOpenBrowserRingUri" class="panelText"><img alt="browser" src="./images/icons/ic_action_globe.png" class="ui-li-icon largerIcon" /><span data-i18n="openinbrowser"></span></a></li>
+					<li data-icon="false"><a id="ringCurrentRingUri" class="panelText"><img alt="current" src="./images/icons/ic_action_music_1.png" class="ui-li-icon largerIcon" /><span data-i18n="playstopcurrent"></span></a></li>
+				</ul>
+				<p id="ringCounterRingUri"></p>
+			</div>
+			<!-- /panel -->
+			
+			<div class="headerSticky ui-title" data-role="header" data-hide-during-focus="" data-tap-toggle="false" data-position="fixed" data-theme="a">
+				<div>
+					<p class="headerBarText"><img alt="header" id="headerTitleRingUri" class="headerIconTitle" src="./images/icons/ic_launcher_full_arrow.png" /><img alt="header" id="headerOverflowRingUri" class="headerIconFirstRight" src="./images/icons/ic_action_overflow_header.png" />
+					&nbsp;</p>
+				</div>
+			</div><!-- /header -->
+			
+			<div role="main" class="ui-content" data-theme="a">
+				
+				<ul id="ringtoneUri" data-role="listview" data-inset="true"></ul>
+				
+			</div><!-- /content -->
+		
+		</div><!-- /page -->
+		
+		<div id="aboutPage" data-role="page" data-theme="a">
+			
+			<!-- left panel -->
+			<div id="panelMenuAbout" data-role="panel" data-theme="b" data-position="left" data-display="overlay" data-dismissible="true" data-position-fixed="true" data-swipe-close="true" data-animate="true" class="transparant">
+				<ul id="panelMenuAboutUL" data-role="listview"></ul>
+			</div>
+			<!-- /panel -->
+			
+			<!-- right panel -->
+			<div id="panelMenuRightAbout" data-role="panel" data-theme="b" data-position="right" data-display="overlay" data-dismissible="true" data-position-fixed="true" data-swipe-close="true" data-animate="true" class="transparant">
+				<ul id="panelMenuRightAboutUL" data-role="listview"></ul>
+			</div>
+			<!-- /panel -->
+			
+			<div class="headerSticky ui-title" data-role="header" data-hide-during-focus="" data-tap-toggle="false" data-position="fixed" data-theme="a">
+				<div>
+					<p class="headerBarText"><img alt="header" id="headerTitleAbout" class="headerIconTitle" src="./images/icons/ic_launcher_full_arrow.png" /><img alt="header" id="headerOverflowAbout" class="headerIconFirstRight" src="./images/icons/ic_action_overflow_header.png" />
+					&nbsp;</p>
+				</div>
+			</div><!-- /header -->
+			
+			<div role="main" class="ui-content" data-theme="a">
+			
+				<h1 data-i18n="about"></h1>
+				
+				<div class="ui-grid-a ui-responsive">
+					<div class="ui-block-a">
+				
+						<h3 data-i18n="whatdroidpapersis"></h3>
+						
+						<p id="currentPackageVersion"></p>
+						<p data-i18n="aboutdroidpapers"></p>
+						
+						<h3 data-i18n="howdroidpapersismade"></h3>
+						
+						<p data-i18n="[html]howdroidpapersisbuild"></p>
+						<p><span data-i18n="[html]credits.translation"></span>: <span data-i18n="[html]credits.author"></span></p>
+				
+					</div>
+					<div class="ui-block-b">
+				
+						<h3 data-i18n="webandapps"></h3>
+						
+						<ul class="actionList" data-theme="a" data-role="listview" data-inset="true">
+							<li data-icon="false"><a id="linkBrowserDroidPapers" class="panelText"><img alt="browser" src="./images/icons/ic_action_globe.png" class="ui-li-icon largerIcon" />DroidPapers</a></li>
+							<li data-icon="false"><a id="linkBrowserDroidPapersApps" class="panelText"><img alt="browser" src="./images/icons/ic_action_google_play.png" class="ui-li-icon largerIcon" />Apps by Joram Teusink</a></li>
+						</ul>
+						
+						<h3 data-i18n="disclaimerandprivacy"></h3>
+						
+						<div data-role="collapsible">
+							<h3><span data-i18n="moreinformation"></span></h3>
+							<h4 data-i18n="disclaimer"></h4>
+							<p data-i18n="[html]disclaimertext"></p>
+							<h4 data-i18n="privacy"></h4>
+							<p data-i18n="[html]privacytext"></p>
+						</div>
+						
+						<p id="totalTopWallCounter" data-i18n="retrievingdata"></p>
+						<p id="totalTopRingCounter" data-i18n="retrievingdata"></p>
+						<p id="amountWalls" data-i18n="retrievingdata"></p>
+						<p id="amountRings" data-i18n="retrievingdata"></p>
+				
+					</div>
+				</div>
+				
+			</div><!-- /content -->
+		
+		</div><!-- /page -->
+		
+		<div id="supportPage" data-role="page" data-theme="a">
+			
+			<!-- left panel -->
+			<div id="panelMenuSupport" data-role="panel" data-theme="b" data-position="left" data-display="overlay" data-dismissible="true" data-position-fixed="true" data-swipe-close="true" data-animate="true" class="transparant">
+				<ul id="panelMenuSupportUL" data-role="listview"></ul>
+			</div>
+			<!-- /panel -->
+			
+			<!-- right panel -->
+			<div id="panelMenuRightSupport" data-role="panel" data-theme="b" data-position="right" data-display="overlay" data-dismissible="true" data-position-fixed="true" data-swipe-close="true" data-animate="true" class="transparant">
+				<ul id="panelMenuRightSupportUL" data-role="listview"></ul>
+			</div>
+			<!-- /panel -->
+			
+			<div class="headerSticky ui-title" data-role="header" data-hide-during-focus="" data-tap-toggle="false" data-position="fixed" data-theme="a">
+				<div>
+					<p class="headerBarText"><img alt="header" id="headerTitleSupport" class="headerIconTitle" src="./images/icons/ic_launcher_full_arrow.png" /><img alt="header" id="headerOverflowSupport" class="headerIconFirstRight" src="./images/icons/ic_action_overflow_header.png" />
+					&nbsp;</p>
+				</div>
+			</div><!-- /header -->
+			
+			<div role="main" class="ui-content" data-theme="a">
+			
+				<h1 data-i18n="support"></h1>
+				
+				<div class="ui-grid-a ui-responsive">
+					<div class="ui-block-a">
+				
+						<h3 data-i18n="[html]question1"></h3>
+						<p data-i18n="[html]answer1"></p>
+						<h3 data-i18n="[html]question2"></h3>
+						<p data-i18n="[html]answer2"></p>
+						<h3 data-i18n="[html]question3"></h3>
+						<p data-i18n="[html]answer3"></p>
+						<h3 data-i18n="[html]question4"></h3>
+						<p data-i18n="[html]answer4"></p>
+						<h3 data-i18n="[html]question5"></h3>
+						<p data-i18n="[html]answer5"></p>
+						<h3 data-i18n="[html]question6"></h3>
+						<p data-i18n="[html]answer6"></p>
+						<h3 data-i18n="[html]question7"></h3>
+						<p data-i18n="[html]answer7"></p>
+						<h3 data-i18n="[html]question8"></h3>
+						<p data-i18n="[html]answer8"></p>
+						<h3 data-i18n="[html]question9"></h3>
+						<p data-i18n="[html]answer9"></p>
+						
+						<p data-i18n="stillissues"></p>
+						
+					</div>
+					<div class="ui-block-b">
+				
+						<div data-role="collapsible">
+							<h3><span data-i18n="moreinfoaboutsettingwall"></span></h3>
+							<p data-i18n="infoaboutsettingwalldesc"></p>
+							<h4 data-i18n="fillscreenwithwallpaper"></h4>
+							<p data-i18n="autofilldescription"></p>
+							<h4 data-i18n="fitwallpaperonscreen"></h4>
+							<p data-i18n="autofitdescription"></p>
+						</div>
+				
+						<h3 data-i18n="morequestions"></h3>
+						
+						<p data-i18n="morequestionstext"></p>
+						<ul class="actionList" data-role="listview" data-inset="true">
+							<li data-icon="false"><a class="panelText" href="mailto:info@droidpapers.org?subject=DroidPapers%20-%20In-app%20contact" target="_blank"><img alt="email" src="./images/icons/ic_action_mail.png" class="ui-li-icon largerIcon" />E-mail</a></li>
+							<li data-icon="false"><a class="panelText" href="https://plus.google.com/communities/110717643404858418197" target="_blank"><img alt="googleplus" src="./images/icons/ic_action_circles.png" class="ui-li-icon largerIcon" />DroidPapers Beta Channel</a></li>
+							<li data-icon="false"><a class="panelText" href="https://plus.google.com/+JoramTeusink/" target="_blank"><img alt="googleplus" src="./images/icons/ic_action_gplus.png" class="ui-li-icon largerIcon" />Google+</a></li>
+							<li data-icon="false"><a class="panelText" href="https://twitter.com/teusink" target="_blank"><img alt="twitter" src="./images/icons/ic_action_twitter.png" class="ui-li-icon largerIcon" />Twitter</a></li>
+							<li data-icon="false"><a class="panelText" href="https://www.linkedin.com/in/joramteusink" target="_blank"><img alt="linkedin" src="./images/icons/ic_action_linkedin.png" class="ui-li-icon largerIcon" />LinkedIn</a></li>
+						</ul>
+						<p id="systemSpecs"></p>
+				
+					</div>
+				</div>
+				
+			</div><!-- /content -->
+		
+		</div><!-- /page -->
+		
+		<div id="syncPage" data-role="page" data-theme="a">
+			
+			<!-- left panel -->
+			<div id="panelMenuSync" data-role="panel" data-theme="b" data-position="left" data-display="overlay" data-dismissible="true" data-position-fixed="true" data-swipe-close="true" data-animate="true" class="transparant">
+				<ul id="panelMenuSyncUL" data-role="listview"></ul>
+			</div>
+			<!-- /panel -->
+			
+			<!-- right panel -->
+			<div id="panelMenuRightSync" data-role="panel" data-theme="b" data-position="right" data-display="overlay" data-dismissible="true" data-position-fixed="true" data-swipe-close="true" data-animate="true" class="transparant">
+				<ul id="panelMenuRightSyncUL" data-role="listview"></ul>
+			</div>
+			<!-- /panel -->
+			
+			<div class="headerSticky ui-title" data-role="header" data-hide-during-focus="" data-tap-toggle="false" data-position="fixed" data-theme="a">
+				<div>
+					<p class="headerBarText"><img alt="header" id="headerTitleSync" class="headerIconTitle" src="./images/icons/ic_launcher_full_arrow.png" /><img alt="header" id="headerOverflowSync" class="headerIconFirstRight" src="./images/icons/ic_action_overflow_header.png" />
+					&nbsp;</p>
+				</div>
+			</div><!-- /header -->
+			
+			<div role="main" class="ui-content" data-theme="a">
+
+				<h1 data-i18n="checkcontentupdates"></h1>
+				
+				<p id="infoSync"></p>
+				<input type="button" data-theme="c" data-shadow="false" id="startSyncButton" data-i18n="[value]start" />
+				<p id="distroSync"></p>
+				<p id="wallsSync"></p>
+				<p id="ringsSync"></p>
+				<p id="wallNotesSync"></p>
+			
+			</div><!-- /content -->
+		
+		</div><!-- /page -->
+		
+		<div id="settingsPage" data-role="page" data-theme="a">
+			
+			<!-- left panel -->
+			<div id="panelMenuSettings" data-role="panel" data-theme="b" data-position="left" data-display="overlay" data-dismissible="true" data-position-fixed="true" data-swipe-close="true" data-animate="true" class="transparant">
+				<ul id="panelMenuSettingsUL" data-role="listview"></ul>
+			</div>
+			<!-- /panel -->
+			
+			<!-- right panel -->
+			<div id="panelMenuRightSettings" data-role="panel" data-theme="b" data-position="right" data-display="overlay" data-dismissible="true" data-position-fixed="true" data-swipe-close="true" data-animate="true" class="transparant">
+				<ul id="panelMenuRightSettingsUL" data-role="listview"></ul>
+			</div>
+			<!-- /panel -->
+			
+			<div class="headerSticky ui-title" data-role="header" data-hide-during-focus="" data-tap-toggle="false" data-position="fixed" data-theme="a">
+				<div>
+					<p class="headerBarText"><img alt="header" id="headerTitleSettings" class="headerIconTitle" src="./images/icons/ic_launcher_full_arrow.png" /><img alt="header" id="headerOverflowSettings" class="headerIconFirstRight" src="./images/icons/ic_action_overflow_header.png" />
+					&nbsp;</p>
+				</div>
+			</div><!-- /header -->
+			
+			<div role="main" class="ui-content" data-theme="a">
+
+				<h1 data-i18n="settings"></h1>
+				
+				<table>
+				
+				<tr class="tdTitle">
+					<td colspan=2><span data-i18n="app"></span></td>
+				</tr>
+				
+				<tr class="nonLineBreak">
+					<td colspan=2><p class="bigSettings" id="setWallColorStatus"></p><p class="tinySettings" data-i18n="optionssetcolorwallpaper"></p></td>
+				</tr>
+				
+				<tr class="lineBreak">
+					<td colspan=2>
+						<div data-role="controlgroup">
+							<input type="button" data-theme="c" data-shadow="false" id="toggleWallColor1" data-mini="true" data-i18n="[value]original" />
+							<input type="button" data-theme="c" data-shadow="false" id="toggleWallColor2" data-mini="true" data-i18n="[value]grayscale" />
+							<input type="button" data-theme="c" data-shadow="false" id="toggleWallColor3" data-mini="true" data-i18n="[value]sepia" />
+						</div>
+					</td>
+				</tr>
+				
+				<tr class="nonLineBreak">
+					<td colspan=2><p class="bigSettings" id="setWallAspectStatus"></p><p class="tinySettings" data-i18n="optionssetsizewallpaper"></p></td>
+				</tr>
+				
+				<tr class="lineBreak">
+					<td colspan=2>
+						<div data-role="controlgroup">
+							<input type="button" data-theme="c" data-shadow="false" id="toggleWallAspect3" data-mini="true" data-i18n="[value]alwaysfillscreen1" />
+							<input type="button" data-theme="c" data-shadow="false" id="toggleWallAspect4" data-mini="true" data-i18n="[value]alwaysfitwallpaper1" />
+						</div>
+					</td>
+				</tr>
+				
+				<tr class="lineBreak">
+					<td class="left"><p class="bigSettings" data-i18n="notifynewcontent"></p><p class="tinySettings" data-i18n="notifynewcontentdesc"></p></td>
+					<td class="right">
+						<select name="flipSettingAutoCheckContent" id="settingAutoCheckContent" data-role="flipswitch" data-corners="false" data-mini="true" data-theme="c">
+							<option value="on" data-i18n="on"></option>
+							<option value="off" data-i18n="off"></option>
+						</select>
+					</td>
+				</tr>
+				
+				<tr class="lineBreak">
+					<td class="left"><p class="bigSettings" data-i18n="notifynewapp"></p><p class="tinySettings" data-i18n="notifynewappdesc"></p></td>
+					<td class="right">
+						<select name="flipSettingAutoCheckApp" id="settingAutoCheckApp" data-role="flipswitch" data-corners="false" data-mini="true" data-theme="c">
+							<option value="on" data-i18n="on"></option>
+							<option value="off" data-i18n="off"></option>
+						</select>
+					</td>
+				</tr>
+				
+				<tr class="lineBreak">
+					<td class="left"><p class="bigSettings" data-i18n="appstatistics"></p><p class="tinySettings" data-i18n="appstatisticsdesc"></p></td>
+					<td class="right">
+						<select name="flipSettingGoogleAnalytics" id="settingGoogleAnalytics" data-role="flipswitch" data-corners="false" data-mini="true" data-theme="c">
+							<option value="on" data-i18n="on"></option>
+							<option value="off" data-i18n="off"></option>
+						</select>
+					</td>
+				</tr>
+				
+				<tr class="tdTitle">
+					<td colspan=2><span data-i18n="backupandrestore"></span></td>
+				</tr>
+				
+				<tr class="nonLineBreak">
+					<td colspan=2><p class="bigSettings" data-i18n="backupfavorites"></p><p class="tinySettings" data-i18n="backupstoredin"></p></td>
+				</tr>
+				
+				<tr class="lineBreak">
+					<td colspan=2>
+						<div data-role="controlgroup">
+							<input type="button" data-theme="c" data-shadow="false" id="startBackupButton" data-mini="true" data-i18n="[value]backup" />
+						</div>
+					</td>
+				</tr>
+				
+				<tr class="nonLineBreak">
+					<td colspan=2><p class="bigSettings" data-i18n="restorefavorites"></p><p class="tinySettings" data-i18n="restorefrombackup"></p></td>
+				</tr>
+				
+				<tr class="lineBreak">
+					<td colspan=2>
+						<div data-role="controlgroup">
+							<input type="button" data-theme="c" data-shadow="false" id="startRestoreButton" data-mini="true" data-i18n="[value]restore" />
+						</div>
+					</td>
+				</tr>
+				
+				<tr class="lineBreak">
+					<td class="left"><p class="bigSettings" data-i18n="autoperformbackup"></p><p class="tinySettings" data-i18n="autoperformbackupdesc"></p></td>
+					<td class="right">
+						<select name="flipSettingAutoBackup" id="settingAutoBackup" data-role="flipswitch" data-corners="false" data-mini="true" data-theme="c">
+							<option value="on" data-i18n="on"></option>
+							<option value="off" data-i18n="off"></option>
+						</select>
+					</td>
+				</tr>
+				
+				<tr class="tdTitle">
+					<td colspan=2><span data-i18n="storage"></span></td>
+				</tr>
+				
+				<tr class="nonLineBreak">
+					<td colspan=2><p class="bigSettings" data-i18n="deleteentirecache"></p><p class="tinySettings" data-i18n="deleteentirecachedesc"></p></td>
+				</tr>
+				
+				<tr class="lineBreak">
+					<td colspan=2>
+						<div data-role="controlgroup">
+							<input type="button" data-theme="c" data-shadow="false" id="deleteEntireCache" data-mini="true" data-i18n="[value]tdelete" />
+						</div>
+					</td>
+				</tr>
+				
+				<tr class="nonLineBreak">
+					<td colspan=2><p class="bigSettings" data-i18n="deletedownloads"></p><p class="tinySettings" data-i18n="deletedownloadsdesc"></p></td>
+				</tr>
+				
+				<tr class="lineBreak">
+					<td colspan=2>
+						<div data-role="controlgroup">
+							<input type="button" data-theme="c" data-shadow="false" id="deleteDownloadedWallpapers" data-mini="true" data-i18n="[value]tdelete" />
+						</div>
+					</td>
+				</tr>
+				
+				</table>
+			
+			</div><!-- /content -->
+		
+		</div><!-- /page -->
+		
+		<div id="dynamicWallpaperPage" data-role="page" data-theme="a">
+			
+			<!-- left panel -->
+			<div id="panelMenuDynamicWall" data-role="panel" data-theme="b" data-position="left" data-display="overlay" data-dismissible="true" data-position-fixed="true" data-swipe-close="true" data-animate="true" class="transparant">
+				<ul id="panelMenuDynamicWallUL" data-role="listview"></ul>
+			</div>
+			<!-- /panel -->
+			
+			<!-- right panel -->
+			<div id="panelMenuRightDynamicWall" data-role="panel" data-theme="b" data-position="right" data-display="overlay" data-dismissible="true" data-position-fixed="true" data-swipe-close="true" data-animate="true" class="transparant">
+				<ul id="panelMenuRightDynamicWallUL" data-role="listview"></ul>
+			</div>
+			<!-- /panel -->
+			
+			<div class="headerSticky ui-title" data-role="header" data-hide-during-focus="" data-tap-toggle="false" data-position="fixed" data-theme="a">
+				<div>
+					<p class="headerBarText"><img alt="header" id="headerTitleDynamicWall" class="headerIconTitle" src="./images/icons/ic_launcher_full_arrow.png" /><img alt="header" id="headerOverflowDynamicWall" class="headerIconFirstRight" src="./images/icons/ic_action_overflow_header.png" />
+					&nbsp;</p>
+				</div>
+			</div><!-- /header -->
+			
+			<div role="main" class="ui-content" data-theme="a">
+
+				<table>
+				
+				<tr class="tdTitle">
+					<td colspan=2><span data-i18n="dynamicwallpaper"></span></td>
+				</tr>
+				
+				<tr class="lineBreak">
+					<td class="center" colspan=2><p class="thinSettings" data-i18n="dynamicdescription"></p></td>
+				</tr>
+				
+				<tr class="lineBreak">
+					<td class="left"><p class="bigSettings" data-i18n="dynamicwallpaperenabled"></p><p class="tinySettings" data-i18n="enableordisabledynamic"></p></td>
+					<td class="right">
+						<select name="flipServiceStatus" id="switchDynamicWallpaper" data-role="flipswitch" data-corners="false" data-mini="true" data-theme="c">
+							<option value="on" data-i18n="on"></option>
+							<option value="off" data-i18n="off"></option>
+						</select>
+					</td>
+				</tr>
+				
+				<tr class="nonLineBreak">
+					<td colspan=2><p class="bigSettings" id="timerDurationStatus"></p><p class="tinySettings" data-i18n="setintervalwallpaperdesc"></p></td>
+				</tr>
+				
+				<tr class="lineBreak">
+					<td colspan=2>
+						<fieldset data-role="controlgroup" data-mini="true">
+							<select name="durationTime" id="durationTime" data-native-menu="true" data-iconpos="left" data-mini="true" data-theme="c" data-icon="expanderopen">
+								<option value="1">1</option>
+								<option value="2">2</option>
+								<option value="3">3</option>
+								<option value="4">4</option>
+								<option value="5">5</option>
+								<option value="6">6</option>
+								<option value="10">10</option>
+								<option value="12">12</option>
+								<option value="15">15</option>
+								<option value="24">24</option>
+								<option value="30">30</option>
+							</select>
+							<select name="durationType" id="durationType" data-native-menu="true" data-iconpos="left" data-mini="true" data-theme="c" data-icon="expanderopen">
+								<option value="min" data-i18n="minutes"></option>
+								<option value="hour" data-i18n="hours"></option>
+							</select>
+							<input type="button" data-theme="c" data-shadow="false" id="setDurationTimer" data-mini="true"  data-i18n="[value]setinterval" />
+						</fieldset>
+					</td>
+				</tr>
+				
+				<tr class="nonLineBreak">
+					<td colspan=2><p class="bigSettings" id="setDynamicWallColorStatus"></p><p class="tinySettings" data-i18n="optionssetcolorwallpaper"></p></td>
+				</tr>
+				
+				<tr class="lineBreak">
+					<td colspan=2>
+						<div data-role="controlgroup">
+							<input type="button" data-theme="c" data-shadow="false" id="toggleDynamicWallColor1" data-mini="true" data-i18n="[value]original" />
+							<input type="button" data-theme="c" data-shadow="false" id="toggleDynamicWallColor2" data-mini="true" data-i18n="[value]grayscale" />
+							<input type="button" data-theme="c" data-shadow="false" id="toggleDynamicWallColor3" data-mini="true" data-i18n="[value]sepia" />
+						</div>
+					</td>
+				</tr>
+				
+				<tr class="nonLineBreak">
+					<td colspan=2><p class="bigSettings" id="setDynamicWallAspectStatus"></p><p class="tinySettings" data-i18n="optionssetsizewallpaper"></p></td>
+				</tr>
+				
+				<tr class="lineBreak">
+					<td colspan=2>
+						<div data-role="controlgroup">
+							<input type="button" data-theme="c" data-shadow="false" id="toggleDynamicWallAspect3" data-mini="true" data-i18n="[value]alwaysfillscreen1" />
+							<input type="button" data-theme="c" data-shadow="false" id="toggleDynamicWallAspect4" data-mini="true" data-i18n="[value]alwaysfitwallpaper1" />
+						</div>
+					</td>
+				</tr>
+				
+				<tr class="lineBreak">
+					<td class="left"><p class="bigSettings" data-i18n="includepicturesfolder"></p><p class="tinySettings" data-i18n="includepicturesfolderdesc"></p></td>
+					<td class="right">
+						<select name="flipServicePicturesFolderStatus" id="settingServicePicturesFolder" data-role="flipswitch" data-corners="false" data-mini="true" data-theme="c">
+							<option value="on" data-i18n="on"></option>
+							<option value="off" data-i18n="off"></option>
+						</select>
+					</td>
+				</tr>
+				
+				<tr class="lineBreak">
+					<td class="left"><p class="bigSettings" data-i18n="includecamerafolder"></p><p class="tinySettings" data-i18n="includecamerafolderdesc"></p></td>
+					<td class="right">
+						<select name="flipServiceCameraFolderStatus" id="settingServiceCameraFolder" data-role="flipswitch" data-corners="false" data-mini="true" data-theme="c">
+							<option value="on" data-i18n="on"></option>
+							<option value="off" data-i18n="off"></option>
+						</select>
+					</td>
+				</tr>
+				
+				<tr class="lineBreak">
+					<td class="left"><p class="bigSettings" data-i18n="excludedroidpapersfolder"></p><p class="tinySettings" data-i18n="excludedroidpapersfolderdesc"></p></td>
+					<td class="right">
+						<select name="flipServiceDroidPapersFolderStatus" id="settingServiceDroidPapersFolder" data-role="flipswitch" data-corners="false" data-mini="true" data-theme="c">
+							<option value="on" data-i18n="on"></option>
+							<option value="off" data-i18n="off"></option>
+						</select>
+					</td>
+				</tr>
+				
+				</table>
+			
+			</div><!-- /content -->
+		
+		</div><!-- /page -->
+		
+		<div id="distributionsRingsPage" data-role="page" data-theme="a">
+			
+			<!-- left panel -->
+			<div id="panelMenuDistributionsRings" data-role="panel" data-theme="b" data-position="left" data-display="overlay" data-dismissible="true" data-position-fixed="true" data-swipe-close="true" data-animate="true" class="transparant">
+				<ul id="panelMenuDistributionsRingsUL" data-role="listview"></ul>
+			</div>
+			<!-- /panel -->
+			
+			<!-- right panel -->
+			<div id="panelMenuRightDistributionsRings" data-role="panel" data-theme="b" data-position="right" data-display="overlay" data-dismissible="true" data-position-fixed="true" data-swipe-close="true" data-animate="true" class="transparant">
+				<ul id="panelMenuRightDistributionsRingsUL" data-role="listview"></ul>
+			</div>
+			<!-- /panel -->
+			
+			<div class="headerSticky ui-title" data-role="header" data-hide-during-focus="" data-tap-toggle="false" data-position="fixed" data-theme="a">
+				<div>
+					<p class="headerBarText"><img alt="header" id="headerTitleDistributionsRings" class="headerIconTitle" src="./images/icons/ic_launcher_full_arrow.png" /><img alt="header" id="headerSearchDistributionsRings" class="headerIconSecondRight" src="./images/icons/ic_action_search_header.png" /><img alt="header" id="headerOverflowDistributionsRings" class="headerIconFirstRight" src="./images/icons/ic_action_overflow_header.png" />
+					&nbsp;</p>
+				</div>
+			</div><!-- /header -->
+			
+			<div role="main" class="ui-content" data-theme="a">
+			
+				<h1 data-i18n="ringtones"></h1>
+				
+				<div class="ui-grid-b ui-responsive">
+					<div class="ui-block-a" id="aGridDistributionsRings"></div>
+					<div class="ui-block-b" id="bGridDistributionsRings"></div>
+					<div class="ui-block-c" id="cGridDistributionsRings"></div>
+				</div>
+			
+			</div><!-- /content -->
+		
+		</div><!-- /page -->
+		
+		<div id="rtFavoritesPage" data-role="page" data-theme="a">
+		
+			<!-- left panel -->
+			<div id="panelMenuRtFavorites" data-role="panel" data-theme="b" data-position="left" data-display="overlay" data-dismissible="true" data-position-fixed="true" data-swipe-close="true" data-animate="true" class="transparant">
+				<ul id="panelMenuRtFavoritesUL" data-role="listview"></ul>
+			</div>
+			<!-- /panel -->
+			
+			<!-- right panel -->
+			<div id="panelMenuRightRtFavorites" data-role="panel" data-theme="b" data-position="right" data-display="overlay" data-dismissible="true" data-position-fixed="true" data-swipe-close="true" data-animate="true" class="transparant">
+				<ul id="panelMenuRightRtFavoritesUL" data-role="listview"></ul>
+			</div>
+			<!-- /panel -->
+			
+			<!-- ringtone panel -->
+			<div id="panelMenuRingRtFavorites" data-role="panel" data-theme="b" data-position="right" data-display="overlay" data-dismissible="true" data-position-fixed="true" data-swipe-close="true" data-animate="true" class="transparant">
+				<br /> <br />
+				<h4 class="ringType" id="ringTypeRtFavorites" data-i18n="ringtone"><br />&nbsp;</h4>
+				<img id="favoriteStarRingsRtFavorites" alt="favoritestar" src="./images/icons/ic_action_star_0_footer.png" class="favoriteRing" />
+				<div data-role="controlgroup" data-type="horizontal">
+					<input id="playButtonRtFavorites" data-mini="true" data-theme="d" type="button" data-inline="true" data-iconpos="notext" data-icon="holoplay" value="Play" />
+					<input id="pauseButtonRtFavorites" data-mini="true" data-theme="d" disabled="true" type="button" data-inline="true" data-iconpos="notext" data-icon="holopause" value="Pause" />
+					<input id="stopButtonRtFavorites" data-mini="true" data-theme="d" disabled="true" type="button" data-inline="true" data-iconpos="notext" data-icon="holostop" value="Stop" />
+				</div>
+				<ul class="actionList" data-theme="b" data-role="listview" data-inset="true">
+					<li data-icon="false"><a id="ringSetDefRtFavorites" class="panelText"><img alt="setdefault" src="./images/icons/ic_action_music_1.png" class="ui-li-icon largerIcon" /><span data-i18n="setasdefault"></span></a></li>
+					<li data-icon="false"><a id="ringDownOnlyRtFavorites" class="panelText"><img alt="download" src="./images/icons/ic_action_download.png" class="ui-li-icon largerIcon" /><span data-i18n="downloadonly"></span></a></li>
+					<li data-icon="false"><a id="ringShareRtFavorites" class="panelText"><img alt="share" src="./images/icons/ic_action_share.png" class="ui-li-icon largerIcon" /><span data-i18n="share"></span></a></li>
+					<li data-icon="false"><a id="ringDelCacheRtFavorites" class="panelText"><img alt="delete" src="./images/icons/ic_action_trash.png" class="ui-li-icon largerIcon" /><span data-i18n="deletedownload"></span></a></li>
+					<li data-icon="false"><a id="ringOpenBrowserRtFavorites" class="panelText"><img alt="browser" src="./images/icons/ic_action_globe.png" class="ui-li-icon largerIcon" /><span data-i18n="openinbrowser"></span></a></li>
+					<li data-icon="false"><a id="ringCurrentRtFavorites" class="panelText"><img alt="current" src="./images/icons/ic_action_music_1.png" class="ui-li-icon largerIcon" /><span data-i18n="playstopcurrent"></span></a></li>
+				</ul>
+				<p id="ringCounterRtFavorites"></p>
+			</div>
+			<!-- /panel -->
+			
+			<div class="headerSticky ui-title" data-role="header" data-hide-during-focus="" data-tap-toggle="false" data-position="fixed" data-theme="a">
+				<div>
+					<p class="headerBarText"><img alt="header" id="headerTitleRtFavorites" class="headerIconTitle" src="./images/icons/ic_launcher_full_arrow.png" /><img alt="header" id="headerOverflowRtFavorites" class="headerIconFirstRight" src="./images/icons/ic_action_overflow_header.png" />
+					&nbsp;</p>
+				</div>
+			</div><!-- /header -->
+			
+			<div role="main" class="ui-content" data-theme="a">
+
+				<h1 data-i18n="myfavoriteringtones"></h1>
+				
+				<div data-role="collapsibleset">
+					<div data-role="collapsible">
+						<h2><span data-i18n="alarms"></span></h2>
+						<ul id="rtFavoriteAlarms" data-role="listview"></ul>
+					</div>
+					<div data-role="collapsible">
+						<h2><span data-i18n="notifications"></span></h2>
+						<ul id="rtFavoriteNotifications" data-role="listview"></ul>
+					</div>
+					<div data-role="collapsible">
+						<h2><span data-i18n="ringtones"></span></h2>
+						<ul id="rtFavoriteRingtones" data-role="listview"></ul>
+					</div>
+				</div>
+			
+			</div><!-- /content -->
+		
+		</div><!-- /page -->
+		
+		<div id="overviewRingsPage" data-role="page" data-theme="a">
+			
+			<!-- left panel -->
+			<div id="panelMenuOverviewRings" data-role="panel" data-theme="b" data-position="left" data-display="overlay" data-dismissible="true" data-position-fixed="true" data-swipe-close="true" data-animate="true" class="transparant">
+				<ul id="panelMenuOverviewRingsUL" data-role="listview"></ul>
+			</div>
+			<!-- /panel -->
+			
+			<!-- right panel -->
+			<div id="panelMenuRightOverviewRings" data-role="panel" data-theme="b" data-position="right" data-display="overlay" data-dismissible="true" data-position-fixed="true" data-swipe-close="true" data-animate="true" class="transparant">
+				<ul id="panelMenuRightOverviewRingsUL" data-role="listview"></ul>
+			</div>
+			<!-- /panel -->
+			
+			<!-- ringtone panel -->
+			<div id="panelMenuRingOverviewRings" data-role="panel" data-theme="b" data-position="right" data-display="overlay" data-dismissible="true" data-position-fixed="true" data-swipe-close="true" data-animate="true" class="transparant">
+				<br /> <br />
+				<h4 class="ringType" id="ringTypeOverviewRings" data-i18n="ringtone"><br />&nbsp;</h4>
+				<img id="favoriteStarRingsOverviewRings" alt="favoritestar" src="./images/icons/ic_action_star_0_footer.png" class="favoriteRing" />
+				<div data-role="controlgroup" data-type="horizontal">
+					<input id="playButtonOverviewRings" data-mini="true" data-theme="d" type="button" data-inline="true" data-iconpos="notext" data-icon="holoplay" value="Play" />
+					<input id="pauseButtonOverviewRings" data-mini="true" data-theme="d" disabled="true" type="button" data-inline="true" data-iconpos="notext" data-icon="holopause" value="Pause" />
+					<input id="stopButtonOverviewRings" data-mini="true" data-theme="d" disabled="true" type="button" data-inline="true" data-iconpos="notext" data-icon="holostop" value="Stop" />
+				</div>
+				<ul class="actionList" data-theme="b" data-role="listview" data-inset="true">
+					<li data-icon="false"><a id="ringSetDefOverviewRings" class="panelText"><img alt="setdefault" src="./images/icons/ic_action_music_1.png" class="ui-li-icon largerIcon" /><span data-i18n="setasdefault"></span></a></li>
+					<li data-icon="false"><a id="ringDownOnlyOverviewRings" class="panelText"><img alt="download" src="./images/icons/ic_action_download.png" class="ui-li-icon largerIcon" /><span data-i18n="downloadonly"></span></a></li>
+					<li data-icon="false"><a id="ringShareOverviewRings" class="panelText"><img alt="share" src="./images/icons/ic_action_share.png" class="ui-li-icon largerIcon" /><span data-i18n="share"></span></a></li>
+					<li data-icon="false"><a id="ringDelCacheOverviewRings" class="panelText"><img alt="delete" src="./images/icons/ic_action_trash.png" class="ui-li-icon largerIcon" /><span data-i18n="deletedownload"></span></a></li>
+					<li data-icon="false"><a id="ringOpenBrowserOverviewRings" class="panelText"><img alt="browser" src="./images/icons/ic_action_globe.png" class="ui-li-icon largerIcon" /><span data-i18n="openinbrowser"></span></a></li>
+					<li data-icon="false"><a id="ringCurrentOverviewRings" class="panelText"><img alt="current" src="./images/icons/ic_action_music_1.png" class="ui-li-icon largerIcon" /><span data-i18n="playstopcurrent"></span></a></li>
+				</ul>
+				<p id="ringCounterOverviewRings"></p>
+			</div>
+			<!-- /panel -->
+			
+			<div class="headerSticky ui-title" data-role="header" data-hide-during-focus="" data-tap-toggle="false" data-position="fixed" data-theme="a">
+				<div>
+					<p class="headerBarText"><img alt="header" id="headerTitleOverviewRings" class="headerIconTitle" src="./images/icons/ic_launcher_full_arrow.png" /><img alt="header" id="headerOverflowOverviewRings" class="headerIconFirstRight" src="./images/icons/ic_action_overflow_header.png" />
+					&nbsp;</p>
+				</div>
+			</div><!-- /header -->
+			
+			<div role="main" class="ui-content" data-theme="a">
+
+				<h1 id="overviewRingsTitle"></h1>
+				
+				<div id="overviewRingtones"></div>
+			
+			</div><!-- /content -->
+		
+		</div><!-- /page -->
+		
+		<div id="distributionsWallsPage" data-role="page" data-theme="a">
+			
+			<!-- left panel -->
+			<div id="panelMenuDistributionsWalls" data-role="panel" data-theme="b" data-position="left" data-display="overlay" data-dismissible="true" data-position-fixed="true" data-swipe-close="true" data-animate="true" class="transparant">
+				<ul id="panelMenuDistributionsWallsUL" data-role="listview"></ul>
+			</div>
+			<!-- /panel -->
+			
+			<!-- right panel -->
+			<div id="panelMenuRightDistributionsWalls" data-role="panel" data-theme="b" data-position="right" data-display="overlay" data-dismissible="true" data-position-fixed="true" data-swipe-close="true" data-animate="true" class="transparant">
+				<ul id="panelMenuRightDistributionsWallsUL" data-role="listview"></ul>
+			</div>
+			<!-- /panel -->
+			
+			<div class="headerSticky ui-title" data-role="header" data-hide-during-focus="" data-tap-toggle="false" data-position="fixed" data-theme="a">
+				<div>
+					<p class="headerBarText"><img alt="header" id="headerTitleDistributionsWalls" class="headerIconTitle" src="./images/icons/ic_launcher_full_arrow.png" /><img alt="header" id="headerSearchDistributionsWalls" class="headerIconSecondRight" src="./images/icons/ic_action_search_header.png" /><img alt="header" id="headerOverflowDistributionsWalls" class="headerIconFirstRight" src="./images/icons/ic_action_overflow_header.png" />
+					&nbsp;</p>
+				</div>
+			</div><!-- /header -->
+			
+			<div role="main" class="ui-content" data-theme="a">
+
+				<h1 data-i18n="wallpapers"></h1>
+				
+				<div class="ui-grid-b ui-responsive">
+					<div class="ui-block-a" id="aGridDistributionsWalls"></div>
+					<div class="ui-block-b" id="bGridDistributionsWalls"></div>
+					<div class="ui-block-c" id="cGridDistributionsWalls"></div>
+				</div>
+			
+			</div><!-- /content -->
+		
+		</div><!-- /page -->
+		
+		<div id="wpFavoritesPage" data-role="page" data-theme="a">
+			
+			<!-- left panel -->
+			<div id="panelMenuWpFavorites" data-role="panel" data-theme="b" data-position="left" data-display="overlay" data-dismissible="true" data-position-fixed="true" data-swipe-close="true" data-animate="true" class="transparant">
+				<ul id="panelMenuWpFavoritesUL" data-role="listview"></ul>
+			</div>
+			<!-- /panel -->
+			
+			<!-- right panel -->
+			<div id="panelMenuRightWpFavorites" data-role="panel" data-theme="b" data-position="right" data-display="overlay" data-dismissible="true" data-position-fixed="true" data-swipe-close="true" data-animate="true" class="transparant">
+				<ul id="panelMenuRightWpFavoritesUL" data-role="listview"></ul>
+			</div>
+			<!-- /panel -->
+			
+			<div class="headerSticky ui-title" data-role="header" data-hide-during-focus="" data-tap-toggle="false" data-position="fixed" data-theme="a">
+				<div>
+					<p class="headerBarText"><img alt="header" id="headerTitleWpFavorites" class="headerIconTitle" src="./images/icons/ic_launcher_full_arrow.png" /><img alt="header" id="headerOverflowWpFavorites" class="headerIconFirstRight" src="./images/icons/ic_action_overflow_header.png" />
+					&nbsp;</p>
+				</div>
+			</div><!-- /header -->
+			
+			<div role="main" class="ui-content" data-theme="a">
+
+				<h1 data-i18n="myfavoritewallpapers"></h1>
+				
+				<div id="wpFavoriteImage"></div>
+			
+			</div><!-- /content -->
+		
+		</div><!-- /page -->
+		
+		<div id="wallpaperFullscreenImagePage" data-role="page" data-theme="b">
+			
+			<!-- left panel -->
+			<div id="panelMenuWpFullScrImage" data-role="panel" data-theme="b" data-position="left" data-display="overlay" data-dismissible="true" data-position-fixed="true" data-swipe-close="true" data-animate="true" class="transparant">
+				<ul id="panelMenuWpFullScrImageUL" data-role="listview"></ul>
+			</div>
+			<!-- /panel -->
+			
+			<!-- right panel -->
+			<div id="panelMenuRightWpFullScrImage" data-role="panel" data-theme="b" data-position="right" data-display="overlay" data-dismissible="true" data-position-fixed="true" data-swipe-close="true" data-animate="true" class="transparant">
+				<ul id="panelMenuRightWpFullScrImageUL" data-role="listview"></ul>
+			</div>
+			<!-- /panel -->
+			
+			<!-- wallpaper panel -->
+			<div id="panelMenuWallWpFullScrImage" class="transparant" data-role="panel" data-theme="b" data-position="right" data-display="overlay" data-dismissible="true" data-position-fixed="true" data-swipe-close="true" data-animate="true">
+				<ul id="actionListWpFullScrImage" data-role="listview" class="transparant"></ul>
+			</div>
+			<!-- /panel -->
+			
+			<div data-role="header" data-hide-during-focus="" data-tap-toggle="false" data-position="fixed" data-theme="b" data-fullscreen="true" id="headerWpFullScrImage" class="headerSticky actionbarTransparant ui-title">
+				<div>
+					<p class="headerBarText"><img alt="header" id="headerTitleWpFullScrImage" class="headerIconTitle" src="./images/icons/ic_launcher_small_arrow.png" /><img alt="header" id="headerShareWpFullScrImage" class="headerIconThirdRight" src="./images/icons/ic_action_share_header.png" /><img alt="header" id="headerWallMenuWpFullScrImage" class="headerIconSecondRight" src="./images/icons/ic_action_list_header.png" /><img alt="header" id="headerOverflowWpFullScrImage" class="headerIconFirstRight" src="./images/icons/ic_action_overflow_header.png" />
+					&nbsp;</p>
+				</div>
+			</div><!-- /header -->
+			
+			<div role="main" data-theme="b" id="fullscreenWallpaperDiv" class="ui-content fullscreenWallpaper">
+				<div id="wallDiv">
+					<img alt="wallpaper" id="wallpaperImageFullScr" class="wallpaperFullScreenImage" src="./images/icons/ic_action_android.png" />
+				</div>
+				
+				<div id="wallInfoDiv">
+					<h5>
+						<span id="wallSpecs" class="title"></span><br />
+						<span id="wallNote" class="title note"></span><br />
+						<span id="wallCounter" class="title"></span>
+					</h5>
+				</div>
+			</div><!-- /content -->
+			
+			<div data-role="footer" data-hide-during-focus="" data-tap-toggle="false" data-position="fixed" data-theme="b" data-fullscreen="true" id="footerWpFullScrImage" class="actionbarTransparant">
+				<div>
+					<img alt="prev" id="prevWallWpFullScrImage" src="./images/icons/ic_action_arrow_left_footer.png" class="footerIconLeft">
+					<img alt="next" id="nextWallWpFullScrImage" src="./images/icons/ic_action_arrow_right_footer.png" class="footerIconLeft">
+					<img alt="set" id="setWallpaper1WpFullScrImage" src="./images/icons/ic_action_picture_footer.png" class="footerIconRight">
+					<img alt="download" id="setWallpaper2WpFullScrImage" src="./images/icons/ic_action_download_footer.png" class="footerIconRight">
+					<img alt="favorite" id="favoriteStar" src="./images/icons/ic_action_star_0_footer.png" class="favorite" />
+				</div>
+			</div><!-- /footer -->
+			
+		</div><!-- /page -->
+		
+		<div id="overviewWallsPage" data-role="page" data-theme="a">
+			
+			<!-- left panel -->
+			<div id="panelMenuOverviewWalls" data-role="panel" data-theme="b" data-position="left" data-display="overlay" data-dismissible="true" data-position-fixed="true" data-swipe-close="true" data-animate="true" class="transparant">
+				<ul id="panelMenuOverviewWallsUL" data-role="listview"></ul>
+			</div>
+			<!-- /panel -->
+			
+			<!-- right panel -->
+			<div id="panelMenuRightOverviewWalls" data-role="panel" data-theme="b" data-position="right" data-display="overlay" data-dismissible="true" data-position-fixed="true" data-swipe-close="true" data-animate="true" class="transparant">
+				<ul id="panelMenuRightOverviewWallsUL" data-role="listview"></ul>
+			</div>
+			<!-- /panel -->
+			
+			<!-- wallpaper filter panel -->
+			<div id="panelMenuFilterOverviewWalls" data-role="panel" data-theme="b" data-position="right" data-display="overlay" data-dismissible="true" data-position-fixed="true" data-swipe-close="true" data-animate="true" class="transparant">
+				<br /> <br />
+				<h3 class="title" data-i18n="wallpaperfilters"></h3>
+				<form>
+					<fieldset data-role="controlgroup" data-iconpos="right">
+						<input type="checkbox" name="filterWallSD" id="filterWallSD" data-theme="b">
+						<label for="filterWallSD"><span data-i18n="includesd"></span></label>
+						<input type="checkbox" name="filterWallHD" id="filterWallHD" data-theme="b">
+						<label for="filterWallHD"><span data-i18n="includehd720p"></span></label>
+						<input type="checkbox" name="filterWallHD2" id="filterWallHD2" data-theme="b">
+						<label for="filterWallHD2"><span data-i18n="includehd1080p"></span></label>
+						<input type="checkbox" name="filterWallHD3" id="filterWallHD3" data-theme="b">
+						<label for="filterWallHD3"><span data-i18n="includehd2160p"></span></label>
+					</fieldset>
+				</form>
+			</div>
+			<!-- /panel -->
+			
+			<div class="headerSticky ui-title" data-role="header" data-hide-during-focus="" data-tap-toggle="false" data-position="fixed" data-theme="a">
+				<div>
+					<p class="headerBarText"><img alt="header" id="headerTitleOverviewWalls" class="headerIconTitle" src="./images/icons/ic_launcher_full_arrow.png" /><img alt="header" id="headerFilterOverviewWalls" class="headerIconSecondRight" src="./images/icons/ic_action_filter_header.png" /><img alt="header" id="headerOverflowOverviewWalls" class="headerIconFirstRight" src="./images/icons/ic_action_overflow_header.png" />
+					&nbsp;</p>
+				</div>
+			</div><!-- /header -->
+			
+			<div role="main" class="ui-content" data-theme="a">
+
+				<h1 id="overviewWallsTitle"></h1>
+				
+				<div id="overviewWallpapers"></div>
+			
+			</div><!-- /content -->
+		
+		</div><!-- /page -->
+		
+		<div id="searchRingtones" data-role="page" data-theme="a">
+			
+			<!-- left panel -->
+			<div id="panelMenuRingSearch" data-role="panel" data-theme="b" data-position="left" data-display="overlay" data-dismissible="true" data-position-fixed="true" data-swipe-close="true" data-animate="true" class="transparant">
+				<ul id="panelMenuRingSearchUL" data-role="listview"></ul>
+			</div>
+			<!-- /panel -->
+			
+			<!-- right panel -->
+			<div id="panelMenuRightRingSearch" data-role="panel" data-theme="b" data-position="right" data-display="overlay" data-dismissible="true" data-position-fixed="true" data-swipe-close="true" data-animate="true" class="transparant">
+				<ul id="panelMenuRightRingSearchUL" data-role="listview"></ul>
+			</div>
+			<!-- /panel -->
+			
+			<!-- ringtone panel -->
+			<div id="panelMenuRingRingSearch" data-role="panel" data-theme="b" data-position="right" data-display="overlay" data-dismissible="true" data-position-fixed="true" data-swipe-close="true" data-animate="true" class="transparant">
+				<br /> <br />
+				<h4 class="ringType" id="ringTypeRingSearch" data-i18n="ringtone"><br />&nbsp;</h4>
+				<img id="favoriteStarRingsRingSearch" alt="favoritestar" src="./images/icons/ic_action_star_0_footer.png" class="favoriteRing" />
+				<div data-role="controlgroup" data-type="horizontal">
+					<input id="playButtonRingSearch" data-mini="true" data-theme="d" type="button" data-inline="true" data-iconpos="notext" data-icon="holoplay" value="Play" />
+					<input id="pauseButtonRingSearch" data-mini="true" data-theme="d" disabled="true" type="button" data-inline="true" data-iconpos="notext" data-icon="holopause" value="Pause" />
+					<input id="stopButtonRingSearch" data-mini="true" data-theme="d" disabled="true" type="button" data-inline="true" data-iconpos="notext" data-icon="holostop" value="Stop" />
+				</div>
+				<ul class="actionList" data-theme="b" data-role="listview" data-inset="true">
+					<li data-icon="false"><a id="ringSetDefRingSearch" class="panelText"><img alt="setdefault" src="./images/icons/ic_action_music_1.png" class="ui-li-icon largerIcon" /><span data-i18n="setasdefault"></span></a></li>
+					<li data-icon="false"><a id="ringDownOnlyRingSearch" class="panelText"><img alt="download" src="./images/icons/ic_action_download.png" class="ui-li-icon largerIcon" /><span data-i18n="downloadonly"></span></a></li>
+					<li data-icon="false"><a id="ringShareRingSearch" class="panelText"><img alt="share" src="./images/icons/ic_action_share.png" class="ui-li-icon largerIcon" /><span data-i18n="share"></span></a></li>
+					<li data-icon="false"><a id="ringDelCacheRingSearch" class="panelText"><img alt="delete" src="./images/icons/ic_action_trash.png" class="ui-li-icon largerIcon" /><span data-i18n="deletedownload"></span></a></li>
+					<li data-icon="false"><a id="ringOpenBrowserRingSearch" class="panelText"><img alt="browser" src="./images/icons/ic_action_globe.png" class="ui-li-icon largerIcon" /><span data-i18n="openinbrowser"></span></a></li>
+					<li data-icon="false"><a id="ringCurrentRingSearch" class="panelText"><img alt="current" src="./images/icons/ic_action_music_1.png" class="ui-li-icon largerIcon" /><span data-i18n="playstopcurrent"></span></a></li>
+				</ul>
+				<p id="ringCounterRingSearch"></p>
+			</div>
+			<!-- /panel -->
+			
+			<div class="headerSticky ui-title" data-role="header" data-hide-during-focus="" data-tap-toggle="false" data-position="fixed" data-theme="a">
+				<div>
+					<p class="headerBarText"><img alt="header" id="headerTitleRingSearch" class="headerIconTitle" src="./images/icons/ic_launcher_full_arrow.png" /><img alt="header" id="headerSearchRingSearch" class="headerIconSecondRight" src="./images/icons/ic_action_search_header.png" /><img alt="header" id="headerOverflowRingSearch" class="headerIconFirstRight" src="./images/icons/ic_action_overflow_header.png" />
+					&nbsp;</p>
+				</div>
+			</div><!-- /header -->
+			
+			<div role="main" class="ui-content" data-theme="a">
+
+				<h1 data-i18n="ringtonesearchresults"></h1>
+				
+				<p id="searchedQueryRingSearch"></p>
+				
+				<div id="overviewFoundRingtones"></div>
+			
+			</div><!-- /content -->
+		
+		</div><!-- /page -->
+		
+		<div id="searchWallpapers" data-role="page" data-theme="a">
+			
+			<!-- left panel -->
+			<div id="panelMenuWallSearch" data-role="panel" data-theme="b" data-position="left" data-display="overlay" data-dismissible="true" data-position-fixed="true" data-swipe-close="true" data-animate="true" class="transparant">
+				<ul id="panelMenuWallSearchUL" data-role="listview"></ul>
+			</div>
+			<!-- /panel -->
+			
+			<!-- right panel -->
+			<div id="panelMenuRightWallSearch" data-role="panel" data-theme="b" data-position="right" data-display="overlay" data-dismissible="true" data-position-fixed="true" data-swipe-close="true" data-animate="true" class="transparant">
+				<ul id="panelMenuRightWallSearchUL" data-role="listview"></ul>
+			</div>
+			<!-- /panel -->
+			
+			<div class="headerSticky ui-title" data-role="header" data-hide-during-focus="" data-tap-toggle="false" data-position="fixed" data-theme="a">
+				<div>
+					<p class="headerBarText"><img alt="header" id="headerTitleWallSearch" class="headerIconTitle" src="./images/icons/ic_launcher_full_arrow.png" /><img alt="header" id="headerSearchWallSearch" class="headerIconSecondRight" src="./images/icons/ic_action_search_header.png" /><img alt="header" id="headerOverflowWallSearch" class="headerIconFirstRight" src="./images/icons/ic_action_overflow_header.png" />
+					&nbsp;</p>
+				</div>
+			</div><!-- /header -->
+			
+			<div role="main" class="ui-content" data-theme="a">
+
+				<h1 data-i18n="wallpapersearchresults"></h1>
+				
+				<p id="searchedQueryWallSearch"></p>
+				
+				<div id="overviewFoundWallpapers"></div>
+			
+			</div><!-- /content -->
+		
+		</div><!-- /page -->
+	</body>
+</html>

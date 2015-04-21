@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="viewport" content="user-scalable=no, initial-scale=1, width=device-width" /><!-- Do not change this! -->
+		
+		<!-- Stylesheets -->
+		<!-- jQuery and jQuery Mobile -->
+		<link rel="stylesheet" type="text/css" href="./themes/AndroidHolo.min.css" /><!-- ThemeRoller theme -->
+		<link rel="stylesheet" type="text/css" href="./themes/jquery.mobile.icons-1.4.5.min.css" />
+		<link rel="stylesheet" type="text/css" href="./themes/jquery.mobile.structure-1.4.5.min.css" />
+		
+		<!-- Application -->
+		<link rel="stylesheet" type="text/css" href="./themes/application.css" />
+		<link rel="stylesheet" type="text/css" href="./themes/application.spinner.css" />
+		<link rel="stylesheet" type="text/css" href="./themes/application.cards.css" />
+		<link rel="stylesheet" type="text/css" href="./themes/application.smartphone.css" id="sizeStylesheet" />
+		
+		<!-- JavaScript -->
+		<!-- Cordova PhoneGap -->
+		<script type="text/javascript" src="./cordova.js"></script>
+		<script type="text/javascript" src="./js/backgroundService-3.1.0.js"></script>
+		<script type="text/javascript" src="./js/GAPlugin.js"></script>
+		<script type="text/javascript" src="./js/cordova_custom_plugins.js"></script>
+		
+		<!-- jQuery -->
+		<script type="text/javascript" src="./js/jquery-2.1.1.min.js"></script>
+		
+		<!-- jQuery Mobile -->
+		<script type="text/javascript" src="./js/jquery.mobile.settings.js"></script><!-- this must be loaded before jQuery Mobile -->
+		<script type="text/javascript" src="./js/jquery.mobile-1.4.5.min.js"></script>
+		
+		<!-- Other frameworks -->
+		<script type="text/javascript" src="./js/fastclick.js"></script>
+		<script type="text/javascript" src="./js/i18next-1.7.4.min.js"></script>
+		
+		<!-- Application -->
+		<script type="text/javascript">
+			window.indexFile = "set_wallpaper.html";
+			window.appPart = "Plugin";
+		</script>
+		<script type="text/javascript" src="./js/application.core.plugins.js"></script>
+		<script type="text/javascript" src="./js/application.core.services.js"></script>
+		<script type="text/javascript" src="./js/application.core.js"></script>
+		<script type="text/javascript" src="./js/application.specific.setwallpaper.js"></script>
+		<script type="text/javascript" src="./js/application.content.walls.js"></script>
+		
+		<title>DroidPapers</title>
+	</head>
+	<body>
+		<div id="landingPluginPage" data-role="page" data-theme="b">
+			<div role="main" class="ui-content" data-theme="b">
+			</div>
+		</div>
+	
+	
+		<div id="pluginPage" data-role="page" data-theme="a">
+		
+			<div class="headerSticky ui-title" data-role="header" data-hide-during-focus="" data-tap-toggle="false" data-position="fixed" data-theme="a">
+				<div>
+					<p class="headerBarText"><img alt="header" class="headerIconTitle" src="./images/icons/ic_launcher_full_noarrow.png" />
+					&nbsp;</p>
+				</div>
+			</div><!-- /header -->
+			
+			<div role="main" class="ui-content" data-theme="a">
+			
+				<div id="wpFavoritePlugin"></div>
+				
+			</div><!-- /content -->
+		
+		</div><!-- /page -->
+		
+		<div id="wallpaperFullscreenImagePluginPage" data-role="page" data-theme="b">
+			
+			<div data-role="header" data-hide-during-focus="" data-tap-toggle="false" data-position="fixed" data-theme="b" data-fullscreen="true" id="headerWpFullScrImagePlugin" class="headerSticky actionbarTransparant ui-title">
+				<div>
+					<p class="headerBarText"><img alt="header" id="headerTitleWpFullScrImagePlugin" class="headerIconTitle" src="./images/icons/ic_launcher_small_arrow.png" />
+					&nbsp;</p>
+				</div>
+			</div><!-- /header -->
+			
+			<div role="main" data-theme="b" id="fullscreenWallpaperDiv" class="ui-content fullscreenWallpaper">
+				<div id="wallDiv">
+					<img alt="wallpaper" id="wallpaperImagePluginFullScr" class="wallpaperFullScreenImage" src="./images/icons/ic_action_android.png" />
+				</div>
+				
+				<div id="wallInfoDiv" class="wallInfo">
+					<h5>
+						<span id="wallSpecs" class="title"></span><br />
+						<span id="wallNote" class="title note"></span><br />
+						<span id="wallCounter" class="title"></span>
+					</h5>
+				</div>
+			</div><!-- /content -->
+			
+			<div data-role="footer" data-hide-during-focus="" data-tap-toggle="false" data-position="fixed" data-theme="b" id="footerWpFullScrImagePlugin" class="actionbarTransparant">
+				<div>
+					<img alt="prev" id="prevWallWpFullScrImagePlugin" src="./images/icons/ic_action_arrow_left_footer.png" class="footerIconLeft">
+					<img alt="next" id="nextWallWpFullScrImagePlugin" src="./images/icons/ic_action_arrow_right_footer.png" class="footerIconLeft">
+					<img alt="set" id="setWallpaper1WpFullScrImagePlugin" src="./images/icons/ic_action_picture_footer.png" class="footerIconRight">
+				</div>
+			</div><!-- /footer -->
+			
+		</div><!-- /page -->
+	</body>
+</html>

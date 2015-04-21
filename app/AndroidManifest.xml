@@ -1,0 +1,107 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+	package="org.teusink.droidpapers"
+	android:versionCode="179"
+	android:versionName="4.0.7" android:installLocation="internalOnly">
+	
+	<uses-sdk
+		android:minSdkVersion="14"
+		android:targetSdkVersion="21" />
+	
+	<supports-screens 
+		android:smallScreens="true"
+		android:normalScreens="true"
+		android:largeScreens="true"
+		android:xlargeScreens="true"
+		android:anyDensity="true"
+		android:resizeable="true" />
+	
+	
+	<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+	<uses-permission android:name="android.permission.INTERNET" />
+	<uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+	<uses-permission android:name="android.permission.SET_WALLPAPER" />
+	<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+	<uses-permission android:name="android.permission.WRITE_SETTINGS" />
+	
+	<application
+		android:hardwareAccelerated="true"
+		android:label="@string/app_name"
+		android:icon="@drawable/ic_launcher"
+		android:allowBackup="false">
+		
+		<receiver android:name="com.red_folder.phonegap.plugin.backgroundservice.BootReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+            </intent-filter>
+        </receiver>
+		
+		<service
+			android:name="org.teusink.droidpapers.ServiceDynamicWallpaper" 
+			android:enabled="true"
+			android:exported="false">
+			<intent-filter>
+				<action android:name="org.teusink.droidpapers.ServiceDynamicWallpaper"/> 
+			</intent-filter>
+		</service>
+		
+		<service
+			android:name="org.teusink.droidpapers.ServiceUpdateChecker" 
+			android:enabled="true"
+			android:exported="false">
+			<intent-filter>
+				<action android:name="org.teusink.droidpapers.ServiceUpdateChecker"/> 
+			</intent-filter>
+		</service>
+		
+		<activity
+			android:name="org.teusink.droidpapers.ActivityMain"
+			android:configChanges="orientation|keyboardHidden|keyboard|screenSize|locale">
+			<intent-filter>
+				<action android:name="android.intent.action.MAIN" />
+				<category android:name="android.intent.category.LAUNCHER" />
+			</intent-filter>
+		</activity>
+		
+		<activity
+			android:name="org.teusink.droidpapers.ActivityViewUriWall"
+			android:configChanges="orientation|keyboardHidden|keyboard|screenSize|locale">
+			<intent-filter>
+				<data
+					android:scheme="http"
+					android:host="droidpapers.teusink.org"
+					android:pathPrefix="/share.php"
+				/>
+			    <action android:name="android.intent.action.VIEW" />
+				<category android:name="android.intent.category.DEFAULT" />
+				<category android:name="android.intent.category.BROWSABLE" />
+			</intent-filter>
+		</activity>
+		
+		<activity
+			android:name="org.teusink.droidpapers.ActivityViewUriRing"
+			android:configChanges="orientation|keyboardHidden|keyboard|screenSize|locale">
+			<intent-filter>
+				<data
+					android:scheme="http"
+					android:host="droidpapers.teusink.org"
+					android:pathPrefix="/ringtones.php"
+				/>
+			    <action android:name="android.intent.action.VIEW" />
+				<category android:name="android.intent.category.DEFAULT" />
+				<category android:name="android.intent.category.BROWSABLE" />
+			</intent-filter>
+		</activity>
+		
+		<activity
+			android:name="org.teusink.droidpapers.ActivitySetWallpaper"
+			android:configChanges="orientation|keyboardHidden|keyboard|screenSize|locale"
+			android:finishOnCloseSystemDialogs="true">
+			<intent-filter>
+				<action android:name="android.intent.action.SET_WALLPAPER" />
+				<category android:name="android.intent.category.DEFAULT" />
+			</intent-filter>
+		</activity>
+		
+	</application>
+
+</manifest>

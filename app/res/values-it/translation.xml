@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="alreadydownloaded">File già scaricato.</string>
+    <string name="appupdate">Aggiornamento applicazione</string>
+    <string name="appupdatemessage">Aggiorna alla versione più recente di DroidPapers.</string>
+    <string name="cachedeleted">Cache cancellata.</string>
+    <string name="contentupdate">Aggiornamento contenuti</string>
+    <string name="downloadcomplete">Download terminato</string>
+    <string name="downloadstarted">Download iniziato....</string>
+    <string name="downloadwrong">Download non riuscito, riprova o contatta il developer.</string>
+    <string name="errorsettingringcontact">Errore di impostazione suoneria, riprova o contatta il developer.</string>
+    <string name="errorsettingwall">Errore di impostazione sfondo. Riprova.</string>
+    <string name="errorsettingwallcontact">Errore di impostazione sfondo, riprova o contatta il developer.</string>
+    <string name="errorsettingwalldel">Errore di impostazione sfondo. Premi \'Elimina dal dispositivo\' e riprova.</string>
+    <string name="file">File</string>
+    <string name="fileerror">Errore durante il download, riprova o contatta il developer.</string>
+    <string name="filenotondevice">File non presente.</string>
+    <string name="fileweberror">File non esistente o impossibile collegarsi al server, riprova o contatta il developer.</string>
+    <string name="initcontent">Inizializza il contenuto</string>
+    <string name="initcontentmessage">Questa notifica verrà mostrata al massimo una volta al giorno e una volta per aggiornamento. Puoi disabilitare la notifica dalle impostazioni di DroidPapers.</string>
+    <string name="localfiledeleted">File locale eliminato.</string>
+    <string name="nodefaultset">Nessun tono predefinito selezionato</string>
+    <string name="nodownloadsfound">DroidPapers non ha trovato sfondi scaricati.</string>
+    <string name="ringsetas">è impostato come</string>
+    <string name="settingwallpaper">Impostazione sfondo</string>
+    <string name="startplaycurrent">Riproduzione iniziata</string>
+    <string name="stopplaycurrent">Riproduzione interrotta</string>
+    <string name="stopplaycurrentsound">Riproduzione suono interrotta.</string>
+    <string name="wallpaperset">Sfondo impostato.</string>
+</resources>
