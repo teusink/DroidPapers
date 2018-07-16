@@ -7,7 +7,7 @@ In this blogpost I am going to talk about my app DroidPapers, and its history. D
 
 Before I briefly describe a reflection with each generation of the app, I will first going to reflect on my experience with app-development and reasons why I stopped with my app DroidPapers.
 
-
+![web](https://rawgit.com/teusink/DroidPapers/master/screenshots/web_function.png)
 
 <h3>Reflection, the good...</h3>
 What a ride it was! When I first launched DroidPapers there were like two users. Me, and... well, probably someone else. Roughly 2,5 years later there were roughly 10.000 users per month with almost 200.000 pageviews and sessions in the app and website combined. These numbers were higher before, but later on that part.
@@ -80,7 +80,10 @@ This generation introduced the side panel menu as Google ment it to be. Further 
 - Begins with version 4.0
 - Release date 3 September 2014
 
-This generation introduced the cards based user interface and an updated website the get all user interfaces into one style. Many features were removed and some were improved. You can look up the screenshots here: https://github.com/teusink/DroidPapers/tree/master/screenshots
+This generation introduced the cards based user interface and an updated website the get all user interfaces into one style. Many features were removed and some were improved.
+
+<h3>Screenshots</h3>
+You can look up the screenshots here: https://github.com/teusink/DroidPapers/tree/master/screenshots
 
 <h3>The Statistics</h3>
 The web-traffic statistics of 2012 and 2013 can be found below.
