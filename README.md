@@ -3,9 +3,7 @@
 DroidPapers was an Android app that existed from June 2012 till November 2014. It supplied wallpapers and ringtones from various sources such as Google Android, Google Chrome, MIUI, CyanogenMod, AOKP, Paranoid, OnePlus, and Ubuntu.
 
 <h2>History</h2>
-In this blogpost I am going to talk about my app DroidPapers, and its history. DroidPapers was a wallpaper and ringtone app and offered a service to automatically change the wallpaper of your device on a given interval.
-
-Before I briefly describe a reflection with each generation of the app, I will first going to reflect on my experience with app-development and reasons why I stopped with my app DroidPapers.
+DroidPapers was a wallpaper and ringtone app and offered a service to automatically change the wallpaper of your device on a given interval. Before I briefly describe a reflection with each generation of the app, I will first going to reflect on my experience with app-development and reasons why I stopped with my app DroidPapers.
 
 ![web](https://rawgit.com/teusink/DroidPapers/master/screenshots/web_function.png)
 
