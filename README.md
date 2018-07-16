@@ -84,13 +84,16 @@ This generation introduced the cards based user interface and an updated website
 
 <h3>The Statistics</h3>
 The web-traffic statistics of 2012 and 2013 can be found below.
+
 ![traffic](https://rawgit.com/teusink/DroidPapers/master/screenshots/droidpapers-stats-2012-2013.jpg)
 
 And for an impression on where DroidPapers was being used, check out this map!
+
 ![map](https://rawgit.com/teusink/DroidPapers/master/screenshots/worldwide-app-usage.png)
 
 <h3>Publication in the Android Magazine (Dutch)</h3>
 And there has also been a publication in the Android Magazine on August the 13th of 2013 (number 13, page 65).
+
 ![map](https://rawgit.com/teusink/DroidPapers/master/screenshots/android-magazine-droidpapers.jpg)
 
 <h2>License</h2>
