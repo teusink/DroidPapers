@@ -52,37 +52,39 @@ First of all, I want to thank every user of DroidPapers, whether he or she still
 
 Second of all, I want to thank Giampaolo in particular for translating DroidPapers to Italian. Thanks for all your time for translating and testing the app! Italian speaking people were the biggest group of users. Thank you all!
 
-<h3>First generation</h3>
+<h3>App generations</h3>
+
+<h4>First generation</h4>
 - Begins with version 1.0
 - Release date: 27 June 2012
 
 This was actually the first release of DroidPapers to the Google Play Store. It was a very basic app with one feature, setting the wallpaper as your default background. All wallpapers were included in the APK file and there were only Android AOSP wallpapers.
 
-<h3>Second generation</h3>
+<h4>Second generation</h4>
 - Begins with version 2.0
 - Release date: 26 September 2012
 
 This generation featured two major new features. The first one was the tablet and smartphone interface. And the second one was the addition of more wallpapers than only AOSP. With this release there was also a website built that hosted the wallpapers. The wallpapers itself were not included in the package anymore.
 
-<h3>Third generation</h3>
+<h4>Third generation</h4>
 - Begins with version 3.0
 - Release date 10 December 2012
 
 The third generation consisted of a couple of new features. Those were the favorites system, the service to automatically change your wallpaper and an updated framework of Cordova PhoneGap and jQuery Mobile. Also the interface got a nice revamp.
 
-<h3>Fourth generation</h3>
+<h4>Fourth generation</h4>
 - Begins with version 3.11
 - Release date 11 June 2013
 
 This generation introduced the side panel menu as Google ment it to be. Further more there were major technical improvements and the website was updated with better styling.
 
-<h3>Fifth, and last, generation</h3>
+<h4>Fifth, and last, generation</h4>
 - Begins with version 4.0
 - Release date 3 September 2014
 
 This generation introduced the cards based user interface and an updated website the get all user interfaces into one style. Many features were removed and some were improved.
 
-<h3>Screenshots</h3>
+<h4>Screenshots</h4>
 You can look up the screenshots here: https://github.com/teusink/DroidPapers/tree/master/screenshots
 
 <h3>The Statistics</h3>
