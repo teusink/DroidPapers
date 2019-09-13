@@ -5,7 +5,7 @@ DroidPapers was an Android app that existed from June 2012 till November 2014. I
 <h2>History</h2>
 DroidPapers was a wallpaper and ringtone app and offered a service to automatically change the wallpaper of your device on a given interval. Before I briefly describe a reflection with each generation of the app, I will first going to reflect on my experience with app-development and reasons why I stopped with my app DroidPapers.
 
-![web](https://rawgit.com/teusink/DroidPapers/master/screenshots/web_function.png)
+![web](https://raw.githubusercontent.com/teusink/DroidPapers/master/screenshots/web_function.png)
 
 <h3>Reflection, the good...</h3>
 What a ride it was! When I first launched DroidPapers there were like two users. Me, and... well, probably someone else. Roughly 2,5 years later there were roughly 10.000 users per month with almost 200.000 pageviews and sessions in the app and website combined. These numbers were higher before, but later on that part.
@@ -88,16 +88,16 @@ You can look up the screenshots here: https://github.com/teusink/DroidPapers/tre
 <h3>The Statistics</h3>
 The web-traffic statistics of 2012 and 2013 can be found below.
 
-![traffic](https://rawgit.com/teusink/DroidPapers/master/screenshots/droidpapers-stats-2012-2013.jpg)
+![traffic](https://raw.githubusercontent.com/teusink/DroidPapers/master/screenshots/droidpapers-stats-2012-2013.jpg)
 
 And for an impression on where DroidPapers was being used, check out this map!
 
-![map](https://rawgit.com/teusink/DroidPapers/master/screenshots/worldwide-app-usage.png)
+![map](https://raw.githubusercontent.com/teusink/DroidPapers/master/screenshots/worldwide-app-usage.png)
 
 <h3>Publication in the Android Magazine (Dutch)</h3>
 And there has also been a publication in the Android Magazine on August the 13th of 2013 (number 13, page 65).
 
-![map](https://rawgit.com/teusink/DroidPapers/master/screenshots/android-magazine-droidpapers.jpg)
+![map](https://raw.githubusercontent.com/teusink/DroidPapers/master/screenshots/android-magazine-droidpapers.jpg)
 
 <h2>License</h2>
 
