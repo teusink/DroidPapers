@@ -640,7 +640,6 @@ function getWallSpecs() {
 	var db = window.openDatabase(window.dbName, window.dbVersion, window.dbName, window.dbSize),
 		fileFolder = window.localStorage.getItem("wallPaperURL" + window.appPart),
 		substringArray,
-		folder,
 		filename,
 		distribution = $.t('distribution'),
 		device = $.t('device'),
@@ -648,8 +647,6 @@ function getWallSpecs() {
 		timesset = $.t('timesset');
 	fileFolder = fileFolder.replace(window.serviceURL + 'app_content/wallpapers/', '');
 	substringArray = fileFolder.split("/");
-	folder = substringArray[0];
-	folder = folder.replace("wp-", "");
 	filename = substringArray[1];
 	filename = filename.replace(".jpg", "");
 	substringArray = filename.split("_");
@@ -693,7 +690,7 @@ function getWallSpecs() {
 function getWallNote() {
 	var db = window.openDatabase(window.dbName, window.dbVersion, window.dbName, window.dbSize),
 		wallpaper = window.localStorage.getItem("wallPaperName" + window.appPart);
-	wallpaper = wallpaper.replace("/^t_?/", "");
+	wallpaper = wallpaper.replace(/^t_?/, "");
 	db.transaction(
 		function (transaction) {
 			transaction.executeSql(

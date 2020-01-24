@@ -4,7 +4,7 @@
 // left panelmenu
 function panelMenu(divId) {
 	var panel = $('#panelMenu' + divId + 'UL'),
-		home = $.t('home'),
+		// home = $.t('home'),
 		searchwallpapers = $.t('searchwallpapers'),
 		searchringtones = $.t('searchringtones'),
 		dynamicwallpaper = $.t('dynamicwallpaper');
@@ -1601,8 +1601,7 @@ $(document).off('swiperight').on('swiperight', function (event) {
 		d = document,
 		e = d.documentElement,
 		g = d.getElementsByTagName('body')[0],
-		x = w.innerWidth || e.clientWidth || g.clientWidth,
-		y = w.innerHeight || e.clientHeight || g.clientHeight;
+		x = w.innerWidth || e.clientWidth || g.clientWidth;
 	if (currentId === "wallpaperFullscreenImagePage") {
 		if (checkOpenPanels() === false) {
 			navigateWallRight();

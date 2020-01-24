@@ -2,14 +2,14 @@
 // var window, $, device, navigator, toggleFavoriteRings, errorHandlerSqlTransaction, getFavoritesRings, toggleFavoriteRings, getInfoSpecificRingAddUl, topicRingClickHandler, storeRingtone, favRingClickHandler, ringsOverviewClickHandler, loadRingsDistro, getOverviewRings, setOverviewRingsTitle, checkConnection, download, toast, playAudio, pauseAudio, stopAudio, share, deleteCache, releaseAudio, Media, stateAudioButtons, audioError, dbVersionHandler, togglePanel, storeVarsRingtone, handleAndroidPreferences, stopAudioCb, startSearchRingtone, getOverviewSearchedRings, currentRingtone, emptyCallback, checkDownload, gaPlugin, gaPluginResultHandler, gaPluginErrorHandler, apiErrorHandler;
 
 // add ringtone to favorites
-function createFavoriteRings(url, name, type, source) {
+function createFavoriteRings(url, name, type) {
 	var db = window.openDatabase(window.dbName, window.dbVersion, window.dbName, window.dbSize);
 	db.transaction(
 		function (transaction) {
 			transaction.executeSql(
 				'INSERT INTO entriesRings (url, name, type) VALUES (?, ?, ?);',
 				[url, name, type],
-				toggleFavoriteRings('remove', source)
+				toggleFavoriteRings('remove')
 			);
 		},
 		errorHandlerSqlTransaction
@@ -21,14 +21,14 @@ function createFavoriteRings(url, name, type, source) {
 }
 
 // delete ringtone from favorites
-function deleteFavoriteRings(url, name, type, source) {
+function deleteFavoriteRings(url, name, type) {
 	var db = window.openDatabase(window.dbName, window.dbVersion, window.dbName, window.dbSize);
 	db.transaction(
 		function (transaction) {
 			transaction.executeSql(
 				'DELETE FROM entriesRings WHERE url=? AND name=? AND type=?;',
 				[url, name, type],
-				toggleFavoriteRings('add', source)
+				toggleFavoriteRings('add')
 			);
 		},
 		errorHandlerSqlTransaction
@@ -53,13 +53,13 @@ function placeFavoriteStarRings(url, name, type) {
 						favoriteStarRings.attr("src", "./images/icons/ic_action_star_10.png");
 						favoriteStarRings.off("click").on("click",
 							function () {
-								deleteFavoriteRings(window.localStorage.getItem('ringtoneUrl'), window.localStorage.getItem('ringtoneName'), window.localStorage.getItem('ringtoneType'), window.localStorage.getItem('divIdGlobal'));
+								deleteFavoriteRings(window.localStorage.getItem('ringtoneUrl'), window.localStorage.getItem('ringtoneName'), window.localStorage.getItem('ringtoneType'));
 							});
 					} else {
 						favoriteStarRings.attr("src", "./images/icons/ic_action_star_0.png");
 						favoriteStarRings.off("click").on("click",
 							function () {
-								createFavoriteRings(window.localStorage.getItem('ringtoneUrl'), window.localStorage.getItem('ringtoneName'), window.localStorage.getItem('ringtoneType'), window.localStorage.getItem('divIdGlobal'));
+								createFavoriteRings(window.localStorage.getItem('ringtoneUrl'), window.localStorage.getItem('ringtoneName'), window.localStorage.getItem('ringtoneType'));
 							});
 					}
 				}
@@ -76,13 +76,13 @@ function toggleFavoriteRings(toggle) {
 		favoriteStarRings.attr("src", "./images/icons/ic_action_star_10.png");
 		favoriteStarRings.off("click").on("click",
 			function () {
-				deleteFavoriteRings(window.localStorage.getItem('ringtoneUrl'), window.localStorage.getItem('ringtoneName'), window.localStorage.getItem('ringtoneType'), window.localStorage.getItem('divIdGlobal'));
+				deleteFavoriteRings(window.localStorage.getItem('ringtoneUrl'), window.localStorage.getItem('ringtoneName'), window.localStorage.getItem('ringtoneType'));
 			});
 	} else if (toggle === "add") {
 		favoriteStarRings.attr("src", "./images/icons/ic_action_star_0.png");
 		favoriteStarRings.off("click").on("click",
 			function () {
-				createFavoriteRings(window.localStorage.getItem('ringtoneUrl'), window.localStorage.getItem('ringtoneName'), window.localStorage.getItem('ringtoneType'), window.localStorage.getItem('divIdGlobal'));
+				createFavoriteRings(window.localStorage.getItem('ringtoneUrl'), window.localStorage.getItem('ringtoneName'), window.localStorage.getItem('ringtoneType'));
 			});
 	}
 }
@@ -759,7 +759,7 @@ function playAudio() {
 		}
 		window.localStorage.setItem("ringtoneUrlCurrent", ringtoneUrl);
 		if (my_media) {
-			my_media.play({numberOfLoops: 1}, stateAudioButtons('disable', 'enable', 'enable', window.localStorage.getItem('divIdGlobal')));
+			my_media.play({numberOfLoops: 1}, stateAudioButtons('disable', 'enable', 'enable'));
 		} else {
 			audioError();
 		}
@@ -771,7 +771,7 @@ function playAudio() {
 // audio error
 function audioError() {
 	var nofileornowebserver = $.t('nofileornowebserver');
-	stateAudioButtons('enable', 'disable', 'disable', window.localStorage.getItem('divIdGlobal'));
+	stateAudioButtons('enable', 'disable', 'disable');
 	toast(nofileornowebserver, 'long');
 	console.error("PhoneGap Plugin: MediaPlayer: Message: file does not exists or cannot connect to webserver.");
 }
@@ -792,7 +792,7 @@ function stateAudioButtons(play, pause, stop) {
 // pause audio
 function pauseAudio() {
 	if (my_media) {
-		stateAudioButtons('enable', 'disable', 'enable', window.localStorage.getItem('divIdGlobal'));
+		stateAudioButtons('enable', 'disable', 'enable');
 		my_media.pause();
 	}
 }
@@ -800,14 +800,14 @@ function pauseAudio() {
 // stop audio
 function stopAudioCb() {
 	if (my_media) {
-		stateAudioButtons('enable', 'disable', 'disable', window.localStorage.getItem('divIdGlobal'));
+		stateAudioButtons('enable', 'disable', 'disable');
 	}
 }
 
 // stop audio
 function stopAudio() {
 	if (my_media) {
-		stateAudioButtons('enable', 'disable', 'disable', window.localStorage.getItem('divIdGlobal'));
+		stateAudioButtons('enable', 'disable', 'disable');
 		my_media.stop();
 	}
 }
@@ -815,7 +815,7 @@ function stopAudio() {
 // release audio
 function releaseAudio() {
 	if (my_media) {
-		stateAudioButtons('enable', 'disable', 'disable', window.localStorage.getItem('divIdGlobal'));
+		stateAudioButtons('enable', 'disable', 'disable');
 		my_media.release();
 	}
 }
