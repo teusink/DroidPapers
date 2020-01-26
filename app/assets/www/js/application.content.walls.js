@@ -171,6 +171,7 @@ function toggleFavorite(toggle) {
 				createFavorite(window.localStorage.getItem("wallPaperFolder" + window.appPart), window.localStorage.getItem("wallPaperName" + window.appPart));
 			});
 	}
+	return true;
 }
 
 // get top set walls from API

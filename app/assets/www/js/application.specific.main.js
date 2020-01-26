@@ -749,6 +749,7 @@ function syncLocalDistros() {
 			errorHandlerSqlTransaction
 		);
 	}).fail(function () { apiErrorHandler($('#infoSync'), "appsyncdistros"); });
+	return true;
 }
 
 // sync walls from API
@@ -769,6 +770,7 @@ function syncLocalWalls() {
 			errorHandlerSqlTransaction
 		);
 	}).fail(function () { apiErrorHandler($('#infoSync'), "appsyncwalls"); });
+	return true;
 }
 
 // sync ringtones from API
@@ -789,6 +791,7 @@ function syncLocalRings() {
 			errorHandlerSqlTransaction
 		);
 	}).fail(function () { apiErrorHandler($('#infoSync'), "appsyncrings"); });
+	return true;
 }
 
 
@@ -810,6 +813,7 @@ function syncLocalWallNotes() {
 			errorHandlerSqlTransaction
 		);
 	}).fail(function () { apiErrorHandler($('#infoSync'), "appsyncwalls"); });
+	return true;
 }
 
 // sync status
@@ -863,6 +867,7 @@ function checkSyncFinished(index, length, type) {
 			$("body").pagecontainer("change", "#indexPage");
 		}
 	}
+	return true;
 }
 
 // delete a selected file from cache
@@ -1116,6 +1121,7 @@ function startRestoreFavoritesWalls() {
 			}, failFileRestoreWall);
 		}, failFileRestoreWall);
 	}, failFileRestoreWall);
+	return true;
 }
 
 // restore favorites rings
@@ -1159,6 +1165,7 @@ function startRestoreFavoritesRings() {
 			}, failFileRestoreRing);
 		}, failFileRestoreRing);
 	}, failFileRestoreRing);
+	return true;
 }
 
 // restore status
@@ -1180,6 +1187,7 @@ function checkRestoreFinished(index, length, type) {
 			buttonStateBackRest("enable");
 		}
 	}
+	return true;
 }
 
 // restore file fail function

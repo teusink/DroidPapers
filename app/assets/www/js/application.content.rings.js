@@ -85,6 +85,7 @@ function toggleFavoriteRings(toggle) {
 				createFavoriteRings(window.localStorage.getItem('ringtoneUrl'), window.localStorage.getItem('ringtoneName'), window.localStorage.getItem('ringtoneType'));
 			});
 	}
+	return true;
 }
 
 // get top set rings from API
@@ -787,6 +788,7 @@ function stateAudioButtons(play, pause, stop) {
 	// stop button
 	$('#stopButton' + window.localStorage.getItem('divIdGlobal')).button(stop);
 	$('#stopButton' + window.localStorage.getItem('divIdGlobal')).button('refresh');
+	return true;
 }
 
 // pause audio
